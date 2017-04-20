@@ -1,0 +1,6 @@
+D:\Projetos\C#\MedicalSystems\MedicalSystems\bin\MedicalSystems.dll.config
+D:\Projetos\C#\MedicalSystems\MedicalSystems\bin\MedicalSystems.dll
+D:\Projetos\C#\MedicalSystems\MedicalSystems\bin\MedicalSystems.pdb
+D:\Projetos\C#\MedicalSystems\MedicalSystems\obj\Debug\MedicalSystems.csprojResolveAssemblyReference.cache
+D:\Projetos\C#\MedicalSystems\MedicalSystems\obj\Debug\MedicalSystems.dll
+D:\Projetos\C#\MedicalSystems\MedicalSystems\obj\Debug\MedicalSystems.pdb

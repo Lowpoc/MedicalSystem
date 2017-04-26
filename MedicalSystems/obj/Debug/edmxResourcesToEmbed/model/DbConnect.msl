@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities">
+    <EntitySetMapping Name="Convenios">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Convenio">
+        <MappingFragment StoreEntitySet="co_Convenios">
+          <ScalarProperty Name="co_id" ColumnName="co_id" />
+          <ScalarProperty Name="co_nome" ColumnName="co_nome" />
+          <ScalarProperty Name="co_telefone" ColumnName="co_telefone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estadoes">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Estado">
+        <MappingFragment StoreEntitySet="es_Estados">
+          <ScalarProperty Name="es_id" ColumnName="es_id" />
+          <ScalarProperty Name="es_sigla" ColumnName="es_sigla" />
+          <ScalarProperty Name="es_nome" ColumnName="es_nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exames">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Exames">
+        <MappingFragment StoreEntitySet="ex_Exames">
+          <ScalarProperty Name="ex_id" ColumnName="ex_id" />
+          <ScalarProperty Name="ex_nome" ColumnName="ex_nome" />
+          <ScalarProperty Name="ex_observacoes" ColumnName="ex_observacoes" />
+          <ScalarProperty Name="ex_codigo" ColumnName="ex_codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicos">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Medico">
+        <MappingFragment StoreEntitySet="md_Medicos">
+          <ScalarProperty Name="md_id" ColumnName="md_id" />
+          <ScalarProperty Name="md_nome" ColumnName="md_nome" />
+          <ScalarProperty Name="md_cpf" ColumnName="md_cpf" />
+          <ScalarProperty Name="md_crm" ColumnName="md_crm" />
+          <ScalarProperty Name="md_endereco" ColumnName="md_endereco" />
+          <ScalarProperty Name="es_id" ColumnName="es_id" />
+          <ScalarProperty Name="cidade_descricao" ColumnName="cidade_descricao" />
+          <ScalarProperty Name="md_atendimentos_turnos" ColumnName="md_atendimentos_turnos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacientes">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Paciente">
+        <MappingFragment StoreEntitySet="pa_Pacientes">
+          <ScalarProperty Name="pa_id" ColumnName="pa_id" />
+          <ScalarProperty Name="pa_nome" ColumnName="pa_nome" />
+          <ScalarProperty Name="pa_cpf" ColumnName="pa_cpf" />
+          <ScalarProperty Name="es_id" ColumnName="es_id" />
+          <ScalarProperty Name="cidade_descricao" ColumnName="cidade_descricao" />
+          <ScalarProperty Name="pa_telefone" ColumnName="pa_telefone" />
+          <ScalarProperty Name="pa_data_aniversario" ColumnName="pa_data_aniversario" />
+          <ScalarProperty Name="pa_sexo" ColumnName="pa_sexo" />
+          <ScalarProperty Name="pl_id" ColumnName="pl_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planoes">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Plano">
+        <MappingFragment StoreEntitySet="pl_Planos">
+          <ScalarProperty Name="pl_id" ColumnName="pl_id" />
+          <ScalarProperty Name="pl_nome" ColumnName="pl_nome" />
+          <ScalarProperty Name="pl_desconto" ColumnName="pl_desconto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

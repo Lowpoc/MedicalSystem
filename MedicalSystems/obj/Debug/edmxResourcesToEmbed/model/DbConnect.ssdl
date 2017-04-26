@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicalSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="co_Convenios">
+    <Key>
+      <PropertyRef Name="co_id" />
+    </Key>
+    <Property Name="co_id" Type="int" Nullable="false" />
+    <Property Name="co_nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="co_telefone" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="es_Estados">
+    <Key>
+      <PropertyRef Name="es_id" />
+    </Key>
+    <Property Name="es_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="es_sigla" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="es_nome" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ex_Exames">
+    <Key>
+      <PropertyRef Name="ex_id" />
+    </Key>
+    <Property Name="ex_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ex_nome" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="ex_observacoes" Type="varchar" MaxLength="150" />
+    <Property Name="ex_codigo" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="md_Medicos">
+    <Key>
+      <PropertyRef Name="md_id" />
+    </Key>
+    <Property Name="md_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="md_nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="md_cpf" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="md_crm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="md_endereco" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="es_id" Type="int" Nullable="false" />
+    <Property Name="cidade_descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="md_atendimentos_turnos" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pa_Pacientes">
+    <Key>
+      <PropertyRef Name="pa_id" />
+    </Key>
+    <Property Name="pa_id" Type="int" Nullable="false" />
+    <Property Name="pa_nome" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="pa_cpf" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="es_id" Type="int" Nullable="false" />
+    <Property Name="cidade_descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pa_telefone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="pa_data_aniversario" Type="date" Nullable="false" />
+    <Property Name="pa_sexo" Type="tinyint" Nullable="false" />
+    <Property Name="pl_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pl_Planos">
+    <Key>
+      <PropertyRef Name="pl_id" />
+    </Key>
+    <Property Name="pl_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pl_nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pl_desconto" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_md_Medicos_es_Estados">
+    <End Role="es_Estados" Type="Self.es_Estados" Multiplicity="1" />
+    <End Role="md_Medicos" Type="Self.md_Medicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="es_Estados">
+        <PropertyRef Name="es_id" />
+      </Principal>
+      <Dependent Role="md_Medicos">
+        <PropertyRef Name="es_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pa_Pacientes_pl_Planos">
+    <End Role="pl_Planos" Type="Self.pl_Planos" Multiplicity="1" />
+    <End Role="pa_Pacientes" Type="Self.pa_Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pl_Planos">
+        <PropertyRef Name="pl_id" />
+      </Principal>
+      <Dependent Role="pa_Pacientes">
+        <PropertyRef Name="pl_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicalSystemModelStoreContainer">
+    <EntitySet Name="co_Convenios" EntityType="Self.co_Convenios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="es_Estados" EntityType="Self.es_Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ex_Exames" EntityType="Self.ex_Exames" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="md_Medicos" EntityType="Self.md_Medicos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pa_Pacientes" EntityType="Self.pa_Pacientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pl_Planos" EntityType="Self.pl_Planos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_md_Medicos_es_Estados" Association="Self.FK_md_Medicos_es_Estados">
+      <End Role="es_Estados" EntitySet="es_Estados" />
+      <End Role="md_Medicos" EntitySet="md_Medicos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pa_Pacientes_pl_Planos" Association="Self.FK_pa_Pacientes_pl_Planos">
+      <End Role="pl_Planos" EntitySet="pl_Planos" />
+      <End Role="pa_Pacientes" EntitySet="pa_Pacientes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

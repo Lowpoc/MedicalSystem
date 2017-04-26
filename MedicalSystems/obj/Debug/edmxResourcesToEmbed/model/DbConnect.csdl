@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicalSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Convenio">
+    <Key>
+      <PropertyRef Name="co_id" />
+    </Key>
+    <Property Name="co_id" Type="Int32" Nullable="false" />
+    <Property Name="co_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="co_telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="es_id" />
+    </Key>
+    <Property Name="es_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="es_sigla" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="es_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="md_Medicos" Relationship="Self.FK_md_Medicos_es_Estados" FromRole="es_Estados" ToRole="md_Medicos" />
+  </EntityType>
+  <EntityType Name="Exames">
+    <Key>
+      <PropertyRef Name="ex_id" />
+    </Key>
+    <Property Name="ex_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ex_nome" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ex_observacoes" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ex_codigo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medico">
+    <Key>
+      <PropertyRef Name="md_id" />
+    </Key>
+    <Property Name="md_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="md_nome" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="md_cpf" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="md_crm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="md_endereco" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="es_id" Type="Int32" Nullable="false" />
+    <Property Name="cidade_descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="md_atendimentos_turnos" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="es_Estados" Relationship="Self.FK_md_Medicos_es_Estados" FromRole="md_Medicos" ToRole="es_Estados" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="pa_id" />
+    </Key>
+    <Property Name="pa_id" Type="Int32" Nullable="false" />
+    <Property Name="pa_nome" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pa_cpf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="es_id" Type="Int32" Nullable="false" />
+    <Property Name="cidade_descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pa_telefone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pa_data_aniversario" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="pa_sexo" Type="Byte" Nullable="false" />
+    <Property Name="pl_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="pl_Planos" Relationship="Self.FK_pa_Pacientes_pl_Planos" FromRole="pa_Pacientes" ToRole="pl_Planos" />
+  </EntityType>
+  <EntityType Name="Plano">
+    <Key>
+      <PropertyRef Name="pl_id" />
+    </Key>
+    <Property Name="pl_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pl_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pl_desconto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="pa_Pacientes" Relationship="Self.FK_pa_Pacientes_pl_Planos" FromRole="pl_Planos" ToRole="pa_Pacientes" />
+  </EntityType>
+  <Association Name="FK_md_Medicos_es_Estados">
+    <End Role="es_Estados" Type="MedicalSystemModel.Estado" Multiplicity="1" />
+    <End Role="md_Medicos" Type="MedicalSystemModel.Medico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="es_Estados">
+        <PropertyRef Name="es_id" />
+      </Principal>
+      <Dependent Role="md_Medicos">
+        <PropertyRef Name="es_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pa_Pacientes_pl_Planos">
+    <End Role="pl_Planos" Type="MedicalSystemModel.Plano" Multiplicity="1" />
+    <End Role="pa_Pacientes" Type="MedicalSystemModel.Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pl_Planos">
+        <PropertyRef Name="pl_id" />
+      </Principal>
+      <Dependent Role="pa_Pacientes">
+        <PropertyRef Name="pl_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicalSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Convenios" EntityType="MedicalSystemModel.Convenio" />
+    <EntitySet Name="Estadoes" EntityType="MedicalSystemModel.Estado" />
+    <EntitySet Name="Exames" EntityType="MedicalSystemModel.Exames" />
+    <EntitySet Name="Medicos" EntityType="MedicalSystemModel.Medico" />
+    <EntitySet Name="Pacientes" EntityType="MedicalSystemModel.Paciente" />
+    <EntitySet Name="Planoes" EntityType="MedicalSystemModel.Plano" />
+    <AssociationSet Name="FK_md_Medicos_es_Estados" Association="Self.FK_md_Medicos_es_Estados">
+      <End Role="es_Estados" EntitySet="Estadoes" />
+      <End Role="md_Medicos" EntitySet="Medicos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pa_Pacientes_pl_Planos" Association="Self.FK_pa_Pacientes_pl_Planos">
+      <End Role="pl_Planos" EntitySet="Planoes" />
+      <End Role="pa_Pacientes" EntitySet="Pacientes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MedicalSystems.classes;
 using System.Data.Entity;
+using MedicalSystems.classes.contexto;
 using MedicalSystems.model;
 using MedicalSystems.controller;
 
@@ -18,11 +19,7 @@ namespace MedicalSystems
         {
             if (!IsPostBack)
             {
-                var ctx = new MedicalSystemEntities();
-                ListaDeEstados.DataSource = ctx.Estadoes.ToList();
-                ListaDeEstados.DataTextField = "es_nome";
-                ListaDeEstados.DataValueField = "es_id";
-                ListaDeEstados.DataBind();
+               Functions.carregarLista("estadoS",ListaDeEstados);
             }
            
         }
@@ -46,7 +43,7 @@ namespace MedicalSystems
             md.cidade_descricao = cidade.Value;
             if (mdControl.registrar(md))
             {
-                confir.Value = "Cadastrado";
+                confir.Value= "Cadastrado";
                 this.ClearCampos();
             }
             else

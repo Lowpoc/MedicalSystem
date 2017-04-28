@@ -18,7 +18,7 @@ namespace MedicalSystems.controller
         {
             var ctx = new MedicalSystemEntities();
             ctx.Medicos.Add(medicoClass);
-                var retorno = ctx.SaveChanges();
+            var retorno = ctx.SaveChanges();
 
             return retorno == 1 ? true : false;
         }

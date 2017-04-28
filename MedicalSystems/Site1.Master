@@ -86,13 +86,13 @@
             <a href="index.html"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>
         </li>                        
         <li>
-            <a href="#"><i class="fa fa-file-o"></i> <span>Pages</span></a>
+            <a href="#"><i class="fa fa-file-o"></i> <span>Cadastros</span></a>
             <ul>
                 <li>
-                    <a href="#">Email</a>
+                    <a href="#">Formulários</a>
                     <ul>
-                        <li><a href="pages-email-inbox.html">Inbox</a></li>
-                        <li><a href="pages-email-compose.html">Compose</a></li>
+                        <li><a href="frmCadastroMedico.aspx">Médicos</a></li>
+                        <li><a href="frmCadastroPaciente.aspx">Pacientes</a></li>
                     </ul>
                 </li>
                 <li>

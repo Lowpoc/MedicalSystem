@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="MedicalSystems.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MedicalSystems.index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="dev-page-content">                    
 <!-- page content container -->
@@ -18,8 +18,9 @@
                 </div>
             </div>
         </div>                                                                        
-        <div id="dashboard-chart" class="chart-holder"><svg></svg></div>                                                                                                            
-                                    
+        <div id="dashboard-chart" class="chart-holder"><div>
+        </div>
+        </div>                                                                                                            
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover text-center">
                 <tr>                 

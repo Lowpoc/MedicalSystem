@@ -10,7 +10,7 @@
 namespace MedicalSystems {
     
     
-    public partial class frmCadastroMedico {
+    public partial class frmCadastroPaciente {
         
         /// <summary>
         /// confir control.

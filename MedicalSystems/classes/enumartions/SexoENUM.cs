@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
 namespace MedicalSystems.classes
 {
-    public enum SexoEnum
+    public enum SexoEnum 
     {
         Masculino = 1,
         Feminino = 2
-
     }
+    
 }

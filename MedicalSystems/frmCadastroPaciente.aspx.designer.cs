@@ -40,13 +40,13 @@ namespace MedicalSystems {
         protected global::System.Web.UI.HtmlControls.HtmlInputText cpf;
         
         /// <summary>
-        /// crm control.
+        /// telefone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText crm;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText telefone;
         
         /// <summary>
         /// endereco control.
@@ -67,13 +67,31 @@ namespace MedicalSystems {
         protected global::System.Web.UI.HtmlControls.HtmlInputText cidade;
         
         /// <summary>
-        /// turno control.
+        /// data control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl turno;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl data;
+        
+        /// <summary>
+        /// Masculino control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton Masculino;
+        
+        /// <summary>
+        /// Feminino control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton Feminino;
         
         /// <summary>
         /// ListaDeEstados control.
@@ -83,5 +101,14 @@ namespace MedicalSystems {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ListaDeEstados;
+        
+        /// <summary>
+        /// ListaPlanos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ListaPlanos;
     }
 }

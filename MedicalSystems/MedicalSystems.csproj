@@ -702,6 +702,8 @@
   <ItemGroup>
     <Compile Include="classes\contexto\EstadoC.cs" />
     <Compile Include="classes\contexto\Functions.cs" />
+    <Compile Include="classes\contexto\Paciente.cs" />
+    <Compile Include="classes\contexto\Plano.cs" />
     <Compile Include="classes\enumartions\SexoEnum.cs" />
     <Compile Include="classes\enumartions\SituacaoConsultaEnum.cs" />
     <Compile Include="classes\enumartions\TurnoEnum.cs" />

@@ -15,6 +15,9 @@ namespace MedicalSystems
             if (!IsPostBack)
             {
                 Functions.carregarLista("Estado",ListaDeEstados);
+                Functions.carregarLista("plano", ListaPlanos);
+                Functions.generateRadioButtonList('M',Masculino);
+                Functions.generateRadioButtonList('F',Feminino);
             }
         }
         protected void Cadastrar(object sender, EventArgs e)
@@ -52,11 +55,11 @@ namespace MedicalSystems
         private void ClearCampos()
         {
             nome.Value = "";
-            crm.Value = "";
+            telefone.Value = "";
             endereco.Value = "";
             cpf.Value = "";
             ListaDeEstados.SelectedIndex = -1;
-            turno.Value = "";
+            data.Value = "";
             cidade.Value = "";
 
         }

@@ -35,19 +35,19 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Nome</label>
                     <div class="col-md-8">
-                        <input type="text" runat="server"  name="md_nome" id="nome" class="form-control" required="required"   />
+                        <input type="text" runat="server"  name="pa_nome" id="nome" class="form-control" required="required"   />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">CPF</label>
                     <div class="col-md-8">
-                        <input type="text" runat="server"  name="md_cpf" id="cpf" class="form-control" required="required"   />
+                        <input type="text" runat="server"  name="pa_cpf" id="cpf" class="form-control" required="required"   />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-2 control-label">CRM</label>
+                    <label class="col-md-2 control-label">Telefone</label>
                     <div class="col-md-8">
-                        <input type="text" runat="server"  name="md_crm" id="crm" class="form-control" required="required"   />
+                        <input type="text" runat="server"  name="pa_telefone" id="telefone" class="form-control" required="required"   />
                     </div>
                 </div>
                 <div class="form-group">
@@ -63,16 +63,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-2 control-label">Turnos</label>
+                    <label class="col-md-2 control-label">Data Aniversário</label>
                     <div class="col-md-8">
-                        <input type="number" runat="server"  name="md_turno" class="form-control" id="turno" required="required"   />
+                        <input type="date" runat="server"  name="pa_data_aniversario" class="form-control" id="data" required="required"   />
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-8">
-                        <div class="checkbox">
-                            <input type="checkbox" id="check_1" checked="">
-                            <label for="check_1">Check me up</label>
+                    <div class="col-md-offset-2 col-sm-4">
+                        <div class="radio">
+                            <asp:RadioButton ID="Masculino" GroupName="sexo"  CssClass="radio" runat="server" />
+                            <asp:RadioButton ID="Feminino" GroupName="sexo"  CssClass="radio" runat="server" />
                         </div>
                     </div>
                 </div>
@@ -80,6 +80,14 @@
                     <label class="col-md-2 control-label">Estados</label>
                     <div class="col-md-8">
                         <asp:DropDownList ID="ListaDeEstados" runat="server" AppendDataBoundItems="true" CssClass="form-control " >
+                            <asp:ListItem Text="Selecione uma opção" Value="-1"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Planos</label>
+                    <div class="col-md-8">
+                        <asp:DropDownList ID="ListaPlanos" runat="server" AppendDataBoundItems="true" CssClass="form-control " >
                             <asp:ListItem Text="Selecione uma opção" Value="-1"></asp:ListItem>
                         </asp:DropDownList>
                     </div>
@@ -95,5 +103,5 @@
             </form>
         </div>
     </div>
-
+  </div>
 </asp:Content>

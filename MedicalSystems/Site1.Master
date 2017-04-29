@@ -10,7 +10,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" >
-        
     <link rel="icon" href="favicon.ico" type="image/x-icon" >
     <!-- ./meta section -->
         
@@ -42,7 +41,7 @@
 <div class="dev-page-header">
                 
     <div class="dph-logo">
-        <a href="index.html">Intuitive</a>
+        <a href="index.html">Medical System</a>
         <a class="dev-page-sidebar-collapse">
             <div class="dev-page-sidebar-collapse-icon">
                 <span class="line-one"></span>
@@ -81,9 +80,9 @@
 <div class="dev-page-sidebar">
                     
     <ul class="dev-page-navigation">
-        <li class="title">Navigation</li>
+        <li class="title">Menu</li>
         <li class="active">
-            <a href="index.html"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>
+            <a href="index.aspx"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>
         </li>                        
         <li>
             <a href="#"><i class="fa fa-file-o"></i> <span>Cadastros</span></a>
@@ -96,9 +95,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Login Forms</a>
+                    <a href="#">Consultas</a>
                     <ul>
-                        <li><a href="pages-login.html" target="_blank">Login</a></li>
+                        <li><a href="frmConsultarMedicos.aspx">Medicos</a></li>
                         <li><a href="pages-login-lite.html" target="_blank">Login Lite</a></li>
                     </ul>
                 </li>
@@ -121,7 +120,7 @@
                 <li><a href="pages-contacts.html">Contacts</a></li>
             </ul>
         </li>                        
-        <li>
+        <%--<li>
             <a href="#"><i class="fa fa-cube"></i> <span>Layouts</span></a>
             <ul>                                
                 <li><a href="layout-boxed.html">Boxed</a></li>
@@ -200,7 +199,7 @@
                 </li>
                 <li><a href="#">Second Level</a></li>
             </ul>
-        </li>
+        </li>--%>
     </ul>
                     
 </div>
@@ -501,6 +500,8 @@
 <script type="text/javascript" src="assets/js/demo.js"></script>
 <script type="text/javascript" src="assets/js/dev-app.js"></script>
 <script type="text/javascript" src="assets/js/demo-dashboard.js"></script>
+<script type="text/javascript" src="assets/js/Notifacoes.js"></script>        
+
 <!-- ./javascript -->
 
     

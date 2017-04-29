@@ -195,6 +195,7 @@
     <Content Include="assets\js\dev-loaders.js" />
     <Content Include="assets\js\dev-settings.js" />
     <Content Include="assets\js\dev-timeout.js" />
+    <Content Include="assets\js\Notifacoes.js" />
     <Content Include="assets\js\plugins\blueimp\jquery.blueimp-gallery.min.js" />
     <Content Include="assets\js\plugins\bootstrap-datetimepicker\bootstrap-datetimepicker.js" />
     <Content Include="assets\js\plugins\bootstrap-select\bootstrap-select.js" />
@@ -733,14 +734,12 @@
     <Compile Include="model\Estado.cs">
       <DependentUpon>DbConnect.tt</DependentUpon>
     </Compile>
-    <Compile Include="model\EstadoModel.cs" />
     <Compile Include="model\Exames.cs">
       <DependentUpon>DbConnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Medico.cs">
       <DependentUpon>DbConnect.tt</DependentUpon>
     </Compile>
-    <Compile Include="model\MedicosModel.cs" />
     <Compile Include="model\Paciente.cs">
       <DependentUpon>DbConnect.tt</DependentUpon>
     </Compile>

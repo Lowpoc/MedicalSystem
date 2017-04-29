@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
@@ -19,9 +20,16 @@ namespace MedicalSystems
         {
             if (!IsPostBack)
             {
-               Functions.carregarLista("estadoS",ListaDeEstados);
+                if (Request.QueryString["id"] == null)
+                {
+                    formularioMedico.ChangeMode(FormViewMode.Insert);
+                }
+                else
+                {
+                    formularioMedico.ChangeMode(FormViewMode.Edit);
+                }
             }
-           
+
         }
 
         protected void InserirMedico(object sender, EventArgs e)
@@ -32,28 +40,28 @@ namespace MedicalSystems
 
         protected void Cadastrar(object sender, EventArgs e)
         {
-            Medico md = new Medico();
-            MedicoController mdControl = new MedicoController();
-            md.md_nome = nome.Value;
-            md.md_crm = crm.Value;
-            md.md_endereco = endereco.Value;
-            md.md_cpf = cpf.Value;
-            md.es_id = (Int32)ListaDeEstados.SelectedIndex;
-            md.md_atendimentos_turnos = Convert.ToInt32(turno.Value);
-            md.cidade_descricao = cidade.Value;
-            if (mdControl.registrar(md))
-            {
-                confir.Value= "Cadastrado";
-                this.ClearCampos();
-            }
-            else
-            {
-                Response.Write(@"<script type='text/javascript'>
-                     $('#respostaMsg').attr('class','alert alert-block alert-danger fade in');
-                     $('#respostaMsg').text('Falha ao cadastrar');
-                     $('#respostaMsg').show();
-                </script>");
-            }
+            //Medico md = new Medico();
+            //MedicoController mdControl = new MedicoController();
+            //md.md_nome = nome.Value;
+            //md.md_crm = crm.Value;
+            //md.md_endereco = endereco.Value;
+            //md.md_cpf = cpf.Value;
+            //md.es_id = (Int32)ListaDeEstados.SelectedIndex;
+            //md.md_atendimentos_turnos = Convert.ToInt32(turno.Value);
+            //md.cidade_descricao = cidade.Value;
+            //if (mdControl.registrar(md))
+            //{
+            //    confir.Value= "Cadastrado";
+            //    this.ClearCampos();
+            //}
+            //else
+            //{
+            //    Response.Write(@"<script type='text/javascript'>
+            //         $('#respostaMsg').attr('class','alert alert-block alert-danger fade in');
+            //         $('#respostaMsg').text('Falha ao cadastrar');
+            //         $('#respostaMsg').show();
+            //    </script>");
+            //}
         }
 
         protected void Cancelar(object sender, EventArgs e)
@@ -63,14 +71,30 @@ namespace MedicalSystems
 
         private void ClearCampos()
         {
-            nome.Value = "";
-            crm.Value = "";
-            endereco.Value = "";
-            cpf.Value = "";
-            ListaDeEstados.SelectedIndex = -1;
-            turno.Value = "";
-            cidade.Value = "";
+            //nome.Value = "";
+            //crm.Value = "";
+            //endereco.Value = "";
+            //cpf.Value = "";
+            //ListaDeEstados.SelectedIndex = -1;
+            //turno.Value = "";
+            //cidade.Value = "";
 
+        }
+
+        protected void formularioMedico_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+               Functions.carregarLista("estado", ((DropDownList)sender));
+            }
+        }
+
+        protected void ObjectMedico_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
+        {
+            if (!IsPostBack)
+            {
+             ((Medico) e.InputParameters[0]).es_id = Convert.ToInt32(((DropDownList) formularioMedico.FindControl("EstadosList")).SelectedValue);
+            }
         }
     }
 }

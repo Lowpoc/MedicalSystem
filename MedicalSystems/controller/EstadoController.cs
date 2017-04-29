@@ -12,11 +12,11 @@ namespace MedicalSystems.controller
     public class EstadoController
     {
 
-        //[DataObjectMethod(DataObjectMethodType.Select)]
-        //public LinkedList<Estado> consultar()
-        //{
-        //    EstadoModel estModel = new EstadoModel();
-        //    return estModel.consultarTodosEstados();
-        //}
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Estado> Consultar()
+        {
+            var contexto = Functions.retonarContexto();
+            return contexto.Estadoes.ToList();
+        }
     }
 }

@@ -13,9 +13,10 @@ namespace MedicalSystems.classes.contexto
     public class Functions
     {
 
-    public static void carregarLista(string tipo, DropDownList objDownList) {
+    public static void carregarLista(string tipo, DropDownList objDownList)
+    {
 
-            var ctx = new MedicalSystemEntities();
+        var ctx = retonarContexto();
 
             switch (tipo.ToLower())
             {
@@ -24,6 +25,7 @@ namespace MedicalSystems.classes.contexto
                 objDownList.DataSource = ctx.Estadoes.ToList();
                 objDownList.DataTextField = "es_nome";
                 objDownList.DataValueField = "es_id";
+                //objDownList.BindingContainer.ID = "es_id";
                 objDownList.DataBind();
             break;
             case "plano":
@@ -53,6 +55,12 @@ namespace MedicalSystems.classes.contexto
                     objRadioButtonList.DataBind();
                 break;
             }
+        }
+
+        public static MedicalSystemEntities retonarContexto()
+        {
+            var contexto = new MedicalSystemEntities();
+            return contexto;
         }
     }
 

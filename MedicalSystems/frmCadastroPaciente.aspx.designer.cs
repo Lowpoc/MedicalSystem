@@ -13,102 +13,57 @@ namespace MedicalSystems {
     public partial class frmCadastroPaciente {
         
         /// <summary>
-        /// confir control.
+        /// Titulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText confir;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Titulo;
         
         /// <summary>
-        /// nome control.
+        /// subtitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nome;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subtitle;
         
         /// <summary>
-        /// cpf control.
+        /// formularioPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cpf;
+        protected global::System.Web.UI.WebControls.FormView formularioPaciente;
         
         /// <summary>
-        /// telefone control.
+        /// ObjectPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText telefone;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectPaciente;
         
         /// <summary>
-        /// endereco control.
+        /// ObjectEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText endereco;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectEstado;
         
         /// <summary>
-        /// cidade control.
+        /// ObjectPlano control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cidade;
-        
-        /// <summary>
-        /// data control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl data;
-        
-        /// <summary>
-        /// Masculino control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Masculino;
-        
-        /// <summary>
-        /// Feminino control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Feminino;
-        
-        /// <summary>
-        /// ListaDeEstados control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ListaDeEstados;
-        
-        /// <summary>
-        /// ListaPlanos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ListaPlanos;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectPlano;
     }
 }

@@ -13,10 +13,10 @@ namespace MedicalSystems.model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MedicalSystemEntities : DbContext
+    public partial class MedicalSystemEntities2 : DbContext
     {
-        public MedicalSystemEntities()
-            : base("name=MedicalSystemEntities")
+        public MedicalSystemEntities2()
+            : base("name=MedicalSystemEntities2")
         {
         }
     
@@ -25,11 +25,12 @@ namespace MedicalSystems.model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Convenio> Convenios { get; set; }
-        public virtual DbSet<Estado> Estadoes { get; set; }
-        public virtual DbSet<Exames> Exames { get; set; }
-        public virtual DbSet<Medico> Medicos { get; set; }
-        public virtual DbSet<Paciente> Pacientes { get; set; }
-        public virtual DbSet<Plano> Planoes { get; set; }
+        public virtual DbSet<Convenio> co_Convenios { get; set; }
+        public virtual DbSet<Consulta> cs_Consulta { get; set; }
+        public virtual DbSet<Estado> es_Estados { get; set; }
+        public virtual DbSet<Exame> ex_Exames { get; set; }
+        public virtual DbSet<Medico> md_Medicos { get; set; }
+        public virtual DbSet<Paciente> pa_Pacientes { get; set; }
+        public virtual DbSet<Plano> pl_Planos { get; set; }
     }
 }

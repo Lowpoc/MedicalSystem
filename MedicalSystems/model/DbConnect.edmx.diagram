@@ -4,13 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f70b0140254548b3bba988b2458fe074" Name="Diagram1">
-        <EntityTypeShape EntityType="MedicalSystemModel.Convenio" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Estado" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Exames" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Medico" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Paciente" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Plano" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+      <Diagram DiagramId="c5b4c5a86b334d0fb54e704645474cd2" Name="Diagram1">
+        <EntityTypeShape EntityType="MedicalSystemModel.Convenio" Width="1.5" PointX="6" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Consulta" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Estado" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Exame" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Medico" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Paciente" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Plano" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MedicalSystemModel.FK_cs_Consulta_co_Convenios" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.FK_cs_Consulta_ex_Exames" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.FK_cs_Consulta_md_Medicos" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.FK_cs_Consulta_pa_Pacientes" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.fk_id" ManuallyRouted="false" />
         <AssociationConnector Association="MedicalSystemModel.FK_md_Medicos_es_Estados" ManuallyRouted="false" />
         <AssociationConnector Association="MedicalSystemModel.FK_pa_Pacientes_pl_Planos" ManuallyRouted="false" />
       </Diagram>

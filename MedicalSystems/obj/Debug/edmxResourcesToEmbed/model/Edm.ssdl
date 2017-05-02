@@ -8,21 +8,6 @@
     <Property Name="co_nome" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="co_telefone" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="cs_Consulta">
-    <Key>
-      <PropertyRef Name="cs_id" />
-    </Key>
-    <Property Name="cs_id" Type="int" Nullable="false" />
-    <Property Name="cs_nome" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="cs_observacao" Type="varchar" MaxLength="150" />
-    <Property Name="cs_turno" Type="tinyint" Nullable="false" />
-    <Property Name="cs_data" Type="date" Nullable="false" />
-    <Property Name="cs_situacao" Type="tinyint" Nullable="false" />
-    <Property Name="md_id" Type="int" Nullable="false" />
-    <Property Name="pa_id" Type="int" Nullable="false" />
-    <Property Name="co_id" Type="int" Nullable="false" />
-    <Property Name="ex_id" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="es_Estados">
     <Key>
       <PropertyRef Name="es_id" />
@@ -64,7 +49,7 @@
     <Property Name="cidade_descricao" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="pa_telefone" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="pa_data_aniversario" Type="date" Nullable="false" />
-    <Property Name="pa_sexo" Type="int" />
+    <Property Name="pa_sexo" Type="varchar" MaxLength="1" />
     <Property Name="pl_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="pl_Planos">
@@ -75,66 +60,6 @@
     <Property Name="pl_nome" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="pl_desconto" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK_cs_Consulta_co_Convenios">
-    <End Role="co_Convenios" Type="Self.co_Convenios" Multiplicity="1" />
-    <End Role="cs_Consulta" Type="Self.cs_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="co_Convenios">
-        <PropertyRef Name="co_id" />
-      </Principal>
-      <Dependent Role="cs_Consulta">
-        <PropertyRef Name="co_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_cs_Consulta_ex_Exames">
-    <End Role="ex_Exames" Type="Self.ex_Exames" Multiplicity="1" />
-    <End Role="cs_Consulta" Type="Self.cs_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ex_Exames">
-        <PropertyRef Name="ex_id" />
-      </Principal>
-      <Dependent Role="cs_Consulta">
-        <PropertyRef Name="ex_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_cs_Consulta_md_Medicos">
-    <End Role="md_Medicos" Type="Self.md_Medicos" Multiplicity="1" />
-    <End Role="cs_Consulta" Type="Self.cs_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="md_Medicos">
-        <PropertyRef Name="md_id" />
-      </Principal>
-      <Dependent Role="cs_Consulta">
-        <PropertyRef Name="md_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_cs_Consulta_pa_Pacientes">
-    <End Role="pa_Pacientes" Type="Self.pa_Pacientes" Multiplicity="1" />
-    <End Role="cs_Consulta" Type="Self.cs_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="pa_Pacientes">
-        <PropertyRef Name="pa_id" />
-      </Principal>
-      <Dependent Role="cs_Consulta">
-        <PropertyRef Name="pa_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_id">
-    <End Role="es_Estados" Type="Self.es_Estados" Multiplicity="1" />
-    <End Role="pa_Pacientes" Type="Self.pa_Pacientes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="es_Estados">
-        <PropertyRef Name="es_id" />
-      </Principal>
-      <Dependent Role="pa_Pacientes">
-        <PropertyRef Name="es_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_md_Medicos_es_Estados">
     <End Role="es_Estados" Type="Self.es_Estados" Multiplicity="1" />
     <End Role="md_Medicos" Type="Self.md_Medicos" Multiplicity="*" />
@@ -161,32 +86,11 @@
   </Association>
   <EntityContainer Name="MedicalSystemModelStoreContainer">
     <EntitySet Name="co_Convenios" EntityType="Self.co_Convenios" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="cs_Consulta" EntityType="Self.cs_Consulta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="es_Estados" EntityType="Self.es_Estados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ex_Exames" EntityType="Self.ex_Exames" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="md_Medicos" EntityType="Self.md_Medicos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pa_Pacientes" EntityType="Self.pa_Pacientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pl_Planos" EntityType="Self.pl_Planos" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_cs_Consulta_co_Convenios" Association="Self.FK_cs_Consulta_co_Convenios">
-      <End Role="co_Convenios" EntitySet="co_Convenios" />
-      <End Role="cs_Consulta" EntitySet="cs_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_cs_Consulta_ex_Exames" Association="Self.FK_cs_Consulta_ex_Exames">
-      <End Role="ex_Exames" EntitySet="ex_Exames" />
-      <End Role="cs_Consulta" EntitySet="cs_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_cs_Consulta_md_Medicos" Association="Self.FK_cs_Consulta_md_Medicos">
-      <End Role="md_Medicos" EntitySet="md_Medicos" />
-      <End Role="cs_Consulta" EntitySet="cs_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_cs_Consulta_pa_Pacientes" Association="Self.FK_cs_Consulta_pa_Pacientes">
-      <End Role="pa_Pacientes" EntitySet="pa_Pacientes" />
-      <End Role="cs_Consulta" EntitySet="cs_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="fk_id" Association="Self.fk_id">
-      <End Role="es_Estados" EntitySet="es_Estados" />
-      <End Role="pa_Pacientes" EntitySet="pa_Pacientes" />
-    </AssociationSet>
     <AssociationSet Name="FK_md_Medicos_es_Estados" Association="Self.FK_md_Medicos_es_Estados">
       <End Role="es_Estados" EntitySet="es_Estados" />
       <End Role="md_Medicos" EntitySet="md_Medicos" />

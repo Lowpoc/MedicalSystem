@@ -21,7 +21,7 @@ namespace MedicalSystems.controller
         public bool registrar(Medico medicoClass)
         {
             var ctx = Functions.retonarContexto();
-            ctx.Medicos.Add(medicoClass);
+            ctx.md_Medicos.Add(medicoClass);
             var retorno = ctx.SaveChanges();
             return retorno == 1 ? true : false;
         }
@@ -32,9 +32,9 @@ namespace MedicalSystems.controller
         public List<Medico> consultarComfiltros(string md_nome, string md_crm)
         {
             var contexto = Functions.retonarContexto();
-            return contexto.Medicos
-                .Where(p => (p.md_nome.Equals(md_nome) || md_nome == null) &&
-                            (p.md_crm.Equals(md_crm) || md_crm == null))
+            return contexto.md_Medicos
+                .Where(p => (p.md_nome.Contains(md_nome) || md_nome == null) &&
+                            (p.md_crm.Contains(md_crm) || md_crm == null))
                 .ToList();
         }
         #endregion
@@ -44,7 +44,7 @@ namespace MedicalSystems.controller
         public void AtualizarMedico(Medico medicosClass)
         {
             var contexto = Functions.retonarContexto();
-            contexto.Medicos.AddOrUpdate(medicosClass);
+            contexto.md_Medicos.AddOrUpdate(medicosClass);
             contexto.SaveChanges();
         }
 
@@ -52,10 +52,12 @@ namespace MedicalSystems.controller
 
         #region RemoverMedico
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public bool RemoverMedico(Medico medico)
+        public bool RemoverMedico(Int32 md_id)
         {
             var contexto = Functions.retonarContexto();
-            contexto.Medicos.Remove(medico);
+           var medico =  contexto.md_Medicos.Find(md_id);
+            contexto.md_Medicos.Remove(medico);
+            contexto.SaveChanges();
             return true;
         }
         

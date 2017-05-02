@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 using MedicalSystems.model;
 
@@ -22,14 +23,14 @@ namespace MedicalSystems.classes.contexto
             {
             case "estado":
                 
-                objDownList.DataSource = ctx.Estadoes.ToList();
+                objDownList.DataSource = ctx.es_Estados.ToList();
                 objDownList.DataTextField = "es_nome";
                 objDownList.DataValueField = "es_id";
                 //objDownList.BindingContainer.ID = "es_id";
                 objDownList.DataBind();
             break;
             case "plano":
-                    objDownList.DataSource = ctx.Planoes.ToList();
+                    objDownList.DataSource = ctx.pl_Planos.ToList();
                     objDownList.DataTextField = "pl_nome";
                     objDownList.DataValueField = "pl_id";
                     objDownList.DataBind();
@@ -45,7 +46,6 @@ namespace MedicalSystems.classes.contexto
             switch (tipo)
             {
                 case 'M':
-                    objRadioButtonList.TabIndex = (Int32) SexoEnum.Masculino;
                     objRadioButtonList.Text = SexoEnum.Masculino.ToString();
                     objRadioButtonList.DataBind();
                 break;
@@ -57,9 +57,9 @@ namespace MedicalSystems.classes.contexto
             }
         }
 
-        public static MedicalSystemEntities retonarContexto()
+        public static MedicalSystemEntities2 retonarContexto()
         {
-            var contexto = new MedicalSystemEntities();
+            var contexto = new MedicalSystemEntities2();
             return contexto;
         }
     }

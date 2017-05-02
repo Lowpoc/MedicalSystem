@@ -12,11 +12,20 @@ namespace MedicalSystems.model
     using System;
     using System.Collections.Generic;
     
-    public partial class Exames
+    public partial class Exame
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Exame()
+        {
+            this.cs_Consulta = new HashSet<Consulta>();
+        }
+    
         public int ex_id { get; set; }
         public string ex_nome { get; set; }
         public string ex_observacoes { get; set; }
         public string ex_codigo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consulta> cs_Consulta { get; set; }
     }
 }

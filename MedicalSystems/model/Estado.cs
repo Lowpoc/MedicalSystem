@@ -17,6 +17,7 @@ namespace MedicalSystems.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Estado()
         {
+            this.pa_Pacientes = new HashSet<Paciente>();
             this.md_Medicos = new HashSet<Medico>();
         }
     
@@ -24,6 +25,8 @@ namespace MedicalSystems.model
         public string es_sigla { get; set; }
         public string es_nome { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Paciente> pa_Pacientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Medico> md_Medicos { get; set; }
     }

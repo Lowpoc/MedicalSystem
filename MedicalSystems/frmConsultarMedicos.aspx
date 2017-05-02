@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmConsultarMedicos.aspx.cs" Inherits="MedicalSystems.frmConsultarMedicos" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmConsultarMedicos.aspx.cs" Inherits="MedicalSystems.frmConsultarMedicos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="dev-page-content" >                    
 <!-- page content container -->
@@ -46,9 +46,9 @@
                     <header class="panel-heading">
                         <h1>Listagem</h1>
                     </header>
-                    <asp:GridView runat="server" DataSourceID="ObjectMedicos" AutoGenerateColumns="False" CssClass="table" AllowPaging="True" >
+                    <asp:GridView runat="server" DataSourceID="ObjectMedicos" AutoGenerateColumns="False" CssClass="table table-condensed"  DataKeyNames="md_id" EmptyDataText="<div class='col-md-12'><h4>Não Contem nenhum Medico com as caracteristicas deste filtros</h1></div>"  AllowPaging="True">
                         <Columns>
-                            <asp:BoundField DataField="md_id" HeaderText="Registro" SortExpression="md_id"></asp:BoundField>
+                            <asp:BoundField  DataField="md_id" HeaderText="Registro" SortExpression="md_id"></asp:BoundField>
                             <asp:BoundField DataField="md_nome" HeaderText="Nome" SortExpression="md_nome"></asp:BoundField>
                             <asp:BoundField DataField="md_cpf" HeaderText="CPF" SortExpression="md_cpf"></asp:BoundField>
                             <asp:BoundField DataField="md_crm" HeaderText="CRM" SortExpression="md_crm"></asp:BoundField>
@@ -59,16 +59,29 @@
                             <asp:BoundField DataField="md_atendimentos_turnos" HeaderText="Turnos" SortExpression="md_atendimentos_turnos"></asp:BoundField>
                             <asp:TemplateField HeaderText="Ações">
                                 <ItemTemplate>
-                                    <asp:LinkButton runat="server" Height="38px"><i class=" glyphicon glyphicon-remove-sign" title="Remover" style="height: 38px; color: red"></i></asp:LinkButton>
-                                    <asp:LinkButton runat="server" ToolTip="Editar" PostBackUrl='<%# string.Format("~/frmCadastroMedico.aspx?id={0}",Eval("md_id"))%>' ><i class="fa fa fa-book" title="Editar" style="height: 38px; color: chocolate"></i></asp:LinkButton>
+                                    <asp:LinkButton CommandName="Delete" runat="server" Height="38px"><i class=" glyphicon glyphicon-remove-sign" title="Remover" style="height: 38px; color: red"></i></asp:LinkButton>
+                                    <asp:LinkButton runat="server" ToolTip="Editar" PostBackUrl='<%# string.Format("~/frmCadastroMedico.aspx?id={0}",Eval("md_id"))%>'><i class="fa fa fa-book" title="Editar" style="height: 38px; color: chocolate"></i></asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <pagersettings mode="Numeric"
+                                       position="Bottom"           
+                                       pagebuttoncount="10"
+                            
+                            />
+
+                        <pagerstyle 
+                                    verticalalign="Bottom"
+                                    horizontalalign="Center"
+                            />
                     </asp:GridView>
                 </section>
             </div>
         </div>
-        <asp:ObjectDataSource ID="ObjectMedicos" runat="server" SelectMethod="consultarComfiltros" TypeName="MedicalSystems.controller.MedicoController">
+        <asp:ObjectDataSource ID="ObjectMedicos" runat="server" SelectMethod="consultarComfiltros" TypeName="MedicalSystems.controller.MedicoController" DeleteMethod="RemoverMedico">
+            <DeleteParameters>
+                <asp:Parameter Name="md_id" Type="Int32"></asp:Parameter>
+            </DeleteParameters>
             <SelectParameters>
                 <asp:ControlParameter ControlID="Nome_filtro" PropertyName="Text" Name="md_nome" Type="String"></asp:ControlParameter>
                 <asp:ControlParameter ControlID="Crm_filtro" PropertyName="Text" Name="md_crm" Type="String"></asp:ControlParameter>

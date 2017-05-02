@@ -14,6 +14,12 @@ namespace MedicalSystems.model
     
     public partial class Medico
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Medico()
+        {
+            this.cs_Consulta = new HashSet<Consulta>();
+        }
+    
         public int md_id { get; set; }
         public string md_nome { get; set; }
         public string md_cpf { get; set; }
@@ -23,6 +29,8 @@ namespace MedicalSystems.model
         public string cidade_descricao { get; set; }
         public int md_atendimentos_turnos { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consulta> cs_Consulta { get; set; }
         public virtual Estado es_Estados { get; set; }
     }
 }

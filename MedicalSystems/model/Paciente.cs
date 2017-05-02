@@ -14,6 +14,12 @@ namespace MedicalSystems.model
     
     public partial class Paciente
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Paciente()
+        {
+            this.cs_Consulta = new HashSet<Consulta>();
+        }
+    
         public int pa_id { get; set; }
         public string pa_nome { get; set; }
         public string pa_cpf { get; set; }
@@ -21,9 +27,12 @@ namespace MedicalSystems.model
         public string cidade_descricao { get; set; }
         public string pa_telefone { get; set; }
         public System.DateTime pa_data_aniversario { get; set; }
-        public byte pa_sexo { get; set; }
+        public Nullable<int> pa_sexo { get; set; }
         public int pl_id { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consulta> cs_Consulta { get; set; }
+        public virtual Estado es_Estados { get; set; }
         public virtual Plano pl_Planos { get; set; }
     }
 }

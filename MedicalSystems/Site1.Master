@@ -8,7 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <%--<meta http-equiv="X-UA-Compatible" content="IE=edge" >--%>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" >
     <link rel="icon" href="favicon.ico" type="image/x-icon" >
     <!-- ./meta section -->
@@ -17,9 +17,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/blue-white.css" >
     <!-- ./css styles -->                                     
         
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" type="text/css" href="css/dev-other/dev-ie-fix.css">
-    <![endif]-->
+    <%--[if lte IE 9]>--%>
+        <link rel="stylesheet" type="text/css" href="assets/css/dev-other/dev-ie-fix.css">
+    <%--<![endif]--%>
         
     <!-- javascripts -->
     <script type="text/javascript" src="assets/js/plugins/modernizr/modernizr.js"></script>
@@ -98,7 +98,7 @@
                     <a href="#">Consultas</a>
                     <ul>
                         <li><a href="frmConsultarMedicos.aspx">Medicos</a></li>
-                        <li><a href="pages-login-lite.html" target="_blank">Login Lite</a></li>
+                        <li><a href="frmConsultarPaciente.aspx">Pacientes</a></li>
                     </ul>
                 </li>
                 <li>

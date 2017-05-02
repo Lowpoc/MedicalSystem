@@ -1,22 +1,23 @@
-﻿using MedicalSystems.classes.contexto;
-using MedicalSystems.model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using MedicalSystems.classes.contexto;
+using MedicalSystems.model;
+using Plano = MedicalSystems.model.Plano;
 
 namespace MedicalSystems.controller
 {
     [DataObject(true)]
-    public class EstadoController
+    public class PlanoController
     {
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Estado> Consultar()
+        public List<Plano> consultaPlanos()
         {
             var contexto = Functions.retonarContexto();
-            return contexto.es_Estados.ToList();
+            return contexto.pl_Planos.ToList();
         }
     }
 }

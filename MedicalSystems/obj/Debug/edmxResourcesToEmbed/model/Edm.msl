@@ -1,28 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities2">
+  <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities1">
     <EntitySetMapping Name="co_Convenios">
-      <EntityTypeMapping TypeName="MedicalSystemModel.Convenio">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Convenios">
         <MappingFragment StoreEntitySet="co_Convenios">
           <ScalarProperty Name="co_id" ColumnName="co_id" />
           <ScalarProperty Name="co_nome" ColumnName="co_nome" />
           <ScalarProperty Name="co_telefone" ColumnName="co_telefone" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="cs_Consulta">
-      <EntityTypeMapping TypeName="MedicalSystemModel.Consulta">
-        <MappingFragment StoreEntitySet="cs_Consulta">
-          <ScalarProperty Name="cs_id" ColumnName="cs_id" />
-          <ScalarProperty Name="cs_nome" ColumnName="cs_nome" />
-          <ScalarProperty Name="cs_observacao" ColumnName="cs_observacao" />
-          <ScalarProperty Name="cs_turno" ColumnName="cs_turno" />
-          <ScalarProperty Name="cs_data" ColumnName="cs_data" />
-          <ScalarProperty Name="cs_situacao" ColumnName="cs_situacao" />
-          <ScalarProperty Name="md_id" ColumnName="md_id" />
-          <ScalarProperty Name="pa_id" ColumnName="pa_id" />
-          <ScalarProperty Name="co_id" ColumnName="co_id" />
-          <ScalarProperty Name="ex_id" ColumnName="ex_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -36,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ex_Exames">
-      <EntityTypeMapping TypeName="MedicalSystemModel.Exame">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Exames">
         <MappingFragment StoreEntitySet="ex_Exames">
           <ScalarProperty Name="ex_id" ColumnName="ex_id" />
           <ScalarProperty Name="ex_nome" ColumnName="ex_nome" />
@@ -75,7 +59,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="pl_Planos">
-      <EntityTypeMapping TypeName="MedicalSystemModel.Plano">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Planos">
         <MappingFragment StoreEntitySet="pl_Planos">
           <ScalarProperty Name="pl_id" ColumnName="pl_id" />
           <ScalarProperty Name="pl_nome" ColumnName="pl_nome" />

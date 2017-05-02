@@ -13446,7 +13446,6 @@ Interactive Layer
 /* layouts */
 .container {
   padding: 0px;
-  width: 100%;
   float: left;
   margin: 0px;
 }
@@ -13542,8 +13541,9 @@ Interactive Layer
 }
 .dev-page .dev-page-container .dev-page-content .container {
   position: relative;
-  height: 100%;
   min-height: 100%;
+    top: 3px;
+    left: -5px;
 }
 .dev-page .dev-page-rightbar {
   position: fixed;

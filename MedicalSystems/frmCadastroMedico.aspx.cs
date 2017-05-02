@@ -20,13 +20,22 @@ namespace MedicalSystems
         {
             if (!IsPostBack)
             {
+              
                 if (Request.QueryString["id"] == null)
                 {
                     formularioMedico.ChangeMode(FormViewMode.Insert);
+                    ((DropDownList)formularioMedico.FindControl("Turnos")).DataSource =
+                        Enum.GetNames(typeof(TurnoEnum));
+                    ((DropDownList)formularioMedico.FindControl("Turnos")).DataBind();
                 }
                 else
                 {
                     formularioMedico.ChangeMode(FormViewMode.Edit);
+                    Titulo.InnerText = "Atualizando Médico";
+                    subtitle.InnerText = "Área para atualizar os dados do Médico.";
+                    ((DropDownList)formularioMedico.FindControl("Turnos")).DataSource =
+                        Enum.GetNames(typeof(TurnoEnum));
+                    ((DropDownList)formularioMedico.FindControl("Turnos")).DataBind();
                 }
             }
 
@@ -89,12 +98,10 @@ namespace MedicalSystems
             }
         }
 
-        protected void ObjectMedico_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
+
+        protected void ObjectMedico_OnInserting(object sender, ObjectDataSourceMethodEventArgs e)
         {
-            if (!IsPostBack)
-            {
-             ((Medico) e.InputParameters[0]).es_id = Convert.ToInt32(((DropDownList) formularioMedico.FindControl("EstadosList")).SelectedValue);
-            }
+            ((Medico) e.InputParameters[0]).md_atendimentos_turnos = (int) Enum.Parse(typeof(TurnoEnum),((DropDownList)formularioMedico.FindControl("Turnos")).SelectedValue);
         }
     }
 }

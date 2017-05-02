@@ -653,13 +653,6 @@
     <Content Include="frmConsultarMedicos.aspx" />
     <Content Include="index.aspx" />
     <Content Include="frmCadastroPaciente.aspx" />
-    <EntityDeploy Include="model\DbConnect.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbConnect.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="model\DbConnect.edmx.diagram">
-      <DependentUpon>DbConnect.edmx</DependentUpon>
-    </Content>
     <Content Include="Site1.Master" />
     <Content Include="assets\assets\plugins\lang\ru.json" />
     <Content Include="assets\assets\plugins\nvd3\cumulativeLineData.json" />
@@ -689,6 +682,14 @@
     <Content Include="assets\css\dev-plugins\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\css\dev-plugins\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\dev-plugins\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="frmConsultarPaciente.aspx" />
+    <EntityDeploy Include="model\DbConnect.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbConnect.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="model\DbConnect.edmx.diagram">
+      <DependentUpon>DbConnect.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -713,6 +714,11 @@
     <Compile Include="controller\DataobjectAttribute.cs" />
     <Compile Include="controller\EstadoController.cs" />
     <Compile Include="controller\MedicoController.cs" />
+    <Compile Include="controller\PacienteController.cs" />
+    <Compile Include="controller\PlanoController.cs" />
+    <Compile Include="model\Consulta.cs">
+      <DependentUpon>DbConnect.tt</DependentUpon>
+    </Compile>
     <Compile Include="model\Convenio.cs">
       <DependentUpon>DbConnect.tt</DependentUpon>
     </Compile>
@@ -734,7 +740,7 @@
     <Compile Include="model\Estado.cs">
       <DependentUpon>DbConnect.tt</DependentUpon>
     </Compile>
-    <Compile Include="model\Exames.cs">
+    <Compile Include="model\Exame.cs">
       <DependentUpon>DbConnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Medico.cs">
@@ -781,6 +787,13 @@
     </Compile>
     <Compile Include="frmCadastroPaciente.aspx.designer.cs">
       <DependentUpon>frmCadastroPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarPaciente.aspx.cs">
+      <DependentUpon>frmConsultarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmConsultarPaciente.aspx.designer.cs">
+      <DependentUpon>frmConsultarPaciente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

@@ -10,42 +10,33 @@
 namespace MedicalSystems {
     
     
-    public partial class frmCadastroMedico {
+    public partial class frmConsultarPaciente {
         
         /// <summary>
-        /// Titulo control.
+        /// Nome_filtro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Titulo;
+        protected global::System.Web.UI.WebControls.TextBox Nome_filtro;
         
         /// <summary>
-        /// subtitle control.
+        /// cpf_filtro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subtitle;
+        protected global::System.Web.UI.WebControls.TextBox cpf_filtro;
         
         /// <summary>
-        /// formularioMedico control.
+        /// ObjectPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView formularioMedico;
-        
-        /// <summary>
-        /// ObjectMedico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectMedico;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectPaciente;
     }
 }

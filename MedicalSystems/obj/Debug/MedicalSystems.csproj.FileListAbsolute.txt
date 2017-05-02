@@ -7,4 +7,3 @@ D:\Projetos\C#\MedicalSystems\MedicalSystems\bin\EntityFramework.dll
 D:\Projetos\C#\MedicalSystems\MedicalSystems\bin\EntityFramework.SqlServer.dll
 D:\Projetos\C#\MedicalSystems\MedicalSystems\bin\EntityFramework.xml
 D:\Projetos\C#\MedicalSystems\MedicalSystems\bin\EntityFramework.SqlServer.xml
-D:\Projetos\C#\MedicalSystems\MedicalSystems\obj\Debug\MedicalSystems.csprojResolveAssemblyReference.cache

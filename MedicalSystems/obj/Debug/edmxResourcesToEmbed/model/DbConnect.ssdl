@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="co_id" />
     </Key>
-    <Property Name="co_id" Type="int" Nullable="false" />
+    <Property Name="co_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="co_nome" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="co_telefone" Type="varchar" MaxLength="50" />
   </EntityType>

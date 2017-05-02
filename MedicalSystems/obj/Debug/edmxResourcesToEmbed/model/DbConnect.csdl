@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="co_id" />
     </Key>
-    <Property Name="co_id" Type="Int32" Nullable="false" />
+    <Property Name="co_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="co_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="co_telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="cs_Consulta" Relationship="Self.FK_cs_Consulta_co_Convenios" FromRole="co_Convenios" ToRole="cs_Consulta" />
@@ -173,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MedicalSystemEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="MedicalSystemEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="co_Convenios" EntityType="MedicalSystemModel.Convenio" />
     <EntitySet Name="cs_Consulta" EntityType="MedicalSystemModel.Consulta" />
     <EntitySet Name="es_Estados" EntityType="MedicalSystemModel.Estado" />

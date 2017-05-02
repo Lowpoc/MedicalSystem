@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="co_id" />
           </Key>
-          <Property Name="co_id" Type="int" Nullable="false" />
+          <Property Name="co_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="co_nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="co_telefone" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -210,7 +210,7 @@
           <Key>
             <PropertyRef Name="co_id" />
           </Key>
-          <Property Name="co_id" Type="Int32" Nullable="false" />
+          <Property Name="co_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="co_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="co_telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="cs_Consulta" Relationship="Self.FK_cs_Consulta_co_Convenios" FromRole="co_Convenios" ToRole="cs_Consulta" />
@@ -379,7 +379,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MedicalSystemEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MedicalSystemEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="co_Convenios" EntityType="MedicalSystemModel.Convenio" />
           <EntitySet Name="cs_Consulta" EntityType="MedicalSystemModel.Consulta" />
           <EntitySet Name="es_Estados" EntityType="MedicalSystemModel.Estado" />
@@ -421,7 +421,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities2">
+        <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities">
           <EntitySetMapping Name="co_Convenios">
             <EntityTypeMapping TypeName="MedicalSystemModel.Convenio">
               <MappingFragment StoreEntitySet="co_Convenios">

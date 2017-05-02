@@ -683,6 +683,8 @@
     <Content Include="assets\css\dev-plugins\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\css\dev-plugins\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="frmConsultarPaciente.aspx" />
+    <Content Include="frmCadastrarConvenio.aspx" />
+    <Content Include="frmConsultarConvenio.aspx" />
     <EntityDeploy Include="model\DbConnect.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DbConnect.Designer.cs</LastGenOutput>
@@ -711,6 +713,7 @@
     <Compile Include="classes\enumartions\TurnoEnum.cs" />
     <Compile Include="classes\contexto\Medicos.cs" />
     <Compile Include="classes\conexao\ConectDb.cs" />
+    <Compile Include="controller\ConvenioController.cs" />
     <Compile Include="controller\DataobjectAttribute.cs" />
     <Compile Include="controller\EstadoController.cs" />
     <Compile Include="controller\MedicoController.cs" />
@@ -794,6 +797,20 @@
     </Compile>
     <Compile Include="frmConsultarPaciente.aspx.designer.cs">
       <DependentUpon>frmConsultarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastrarConvenio.aspx.cs">
+      <DependentUpon>frmCadastrarConvenio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCadastrarConvenio.aspx.designer.cs">
+      <DependentUpon>frmCadastrarConvenio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarConvenio.aspx.cs">
+      <DependentUpon>frmConsultarConvenio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmConsultarConvenio.aspx.designer.cs">
+      <DependentUpon>frmConsultarConvenio.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

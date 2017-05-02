@@ -57,9 +57,9 @@ namespace MedicalSystems.classes.contexto
             }
         }
 
-        public static MedicalSystemEntities2 retonarContexto()
+        public static MedicalSystemEntities retonarContexto()
         {
-            var contexto = new MedicalSystemEntities2();
+            var contexto = new MedicalSystemEntities();
             return contexto;
         }
     }

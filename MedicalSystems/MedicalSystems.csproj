@@ -685,6 +685,8 @@
     <Content Include="frmConsultarPaciente.aspx" />
     <Content Include="frmCadastrarConvenio.aspx" />
     <Content Include="frmConsultarConvenio.aspx" />
+    <Content Include="frmCadastroExame.aspx" />
+    <Content Include="frmConsultarExame.aspx" />
     <EntityDeploy Include="model\DbConnect.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DbConnect.Designer.cs</LastGenOutput>
@@ -716,6 +718,7 @@
     <Compile Include="controller\ConvenioController.cs" />
     <Compile Include="controller\DataobjectAttribute.cs" />
     <Compile Include="controller\EstadoController.cs" />
+    <Compile Include="controller\ExameController.cs" />
     <Compile Include="controller\MedicoController.cs" />
     <Compile Include="controller\PacienteController.cs" />
     <Compile Include="controller\PlanoController.cs" />
@@ -811,6 +814,20 @@
     </Compile>
     <Compile Include="frmConsultarConvenio.aspx.designer.cs">
       <DependentUpon>frmConsultarConvenio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroExame.aspx.cs">
+      <DependentUpon>frmCadastroExame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCadastroExame.aspx.designer.cs">
+      <DependentUpon>frmCadastroExame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarExame.aspx.cs">
+      <DependentUpon>frmConsultarExame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmConsultarExame.aspx.designer.cs">
+      <DependentUpon>frmConsultarExame.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

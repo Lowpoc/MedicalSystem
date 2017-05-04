@@ -93,6 +93,7 @@
                         <li><a href="frmCadastroMedico.aspx">Médicos</a></li>
                         <li><a href="frmCadastroPaciente.aspx">Pacientes</a></li>
                         <li><a href="frmCadastrarConvenio.aspx">Convênios</a></li>
+                        <li><a href="frmCadastroExame.aspx">Exames</a></li>
                     </ul>
                 </li>
                 <li>
@@ -101,6 +102,7 @@
                         <li><a href="frmConsultarMedicos.aspx">Medicos</a></li>
                         <li><a href="frmConsultarPaciente.aspx">Pacientes</a></li>
                         <li><a href="frmConsultarConvenio.aspx">Convênios</a></li>
+                        <li><a href="frmConsultarExame.aspx">Exames</a></li>
                     </ul>
                 </li>
                 <li>

@@ -94,6 +94,7 @@
                         <li><a href="frmCadastroPaciente.aspx">Pacientes</a></li>
                         <li><a href="frmCadastrarConvenio.aspx">Convênios</a></li>
                         <li><a href="frmCadastroExame.aspx">Exames</a></li>
+                        <li><a href="frmCadastrarConsulta.aspx">Consulta</a></li>
                     </ul>
                 </li>
                 <li>

@@ -22,9 +22,7 @@
     <Property Name="md_id" Type="Int32" Nullable="false" />
     <Property Name="pa_id" Type="Int32" Nullable="false" />
     <Property Name="co_id" Type="Int32" Nullable="false" />
-    <Property Name="ex_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="co_Convenios" Relationship="Self.FK_cs_Consulta_co_Convenios" FromRole="cs_Consulta" ToRole="co_Convenios" />
-    <NavigationProperty Name="ex_Exames" Relationship="Self.FK_cs_Consulta_ex_Exames" FromRole="cs_Consulta" ToRole="ex_Exames" />
     <NavigationProperty Name="md_Medicos" Relationship="Self.FK_cs_Consulta_md_Medicos" FromRole="cs_Consulta" ToRole="md_Medicos" />
     <NavigationProperty Name="pa_Pacientes" Relationship="Self.FK_cs_Consulta_pa_Pacientes" FromRole="cs_Consulta" ToRole="pa_Pacientes" />
   </EntityType>
@@ -46,7 +44,6 @@
     <Property Name="ex_nome" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ex_observacoes" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="ex_codigo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="cs_Consulta" Relationship="Self.FK_cs_Consulta_ex_Exames" FromRole="ex_Exames" ToRole="cs_Consulta" />
   </EntityType>
   <EntityType Name="Medico">
     <Key>
@@ -98,18 +95,6 @@
       </Principal>
       <Dependent Role="cs_Consulta">
         <PropertyRef Name="co_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_cs_Consulta_ex_Exames">
-    <End Role="ex_Exames" Type="MedicalSystemModel.Exame" Multiplicity="1" />
-    <End Role="cs_Consulta" Type="MedicalSystemModel.Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ex_Exames">
-        <PropertyRef Name="ex_id" />
-      </Principal>
-      <Dependent Role="cs_Consulta">
-        <PropertyRef Name="ex_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -173,7 +158,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MedicalSystemEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="MedicalSystemEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="co_Convenios" EntityType="MedicalSystemModel.Convenio" />
     <EntitySet Name="cs_Consulta" EntityType="MedicalSystemModel.Consulta" />
     <EntitySet Name="es_Estados" EntityType="MedicalSystemModel.Estado" />
@@ -183,10 +168,6 @@
     <EntitySet Name="pl_Planos" EntityType="MedicalSystemModel.Plano" />
     <AssociationSet Name="FK_cs_Consulta_co_Convenios" Association="Self.FK_cs_Consulta_co_Convenios">
       <End Role="co_Convenios" EntitySet="co_Convenios" />
-      <End Role="cs_Consulta" EntitySet="cs_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_cs_Consulta_ex_Exames" Association="Self.FK_cs_Consulta_ex_Exames">
-      <End Role="ex_Exames" EntitySet="ex_Exames" />
       <End Role="cs_Consulta" EntitySet="cs_Consulta" />
     </AssociationSet>
     <AssociationSet Name="FK_cs_Consulta_md_Medicos" Association="Self.FK_cs_Consulta_md_Medicos">

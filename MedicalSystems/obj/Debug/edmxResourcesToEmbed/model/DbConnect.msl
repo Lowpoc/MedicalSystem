@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities">
+  <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities1">
     <EntitySetMapping Name="co_Convenios">
       <EntityTypeMapping TypeName="MedicalSystemModel.Convenio">
         <MappingFragment StoreEntitySet="co_Convenios">
@@ -22,7 +22,6 @@
           <ScalarProperty Name="md_id" ColumnName="md_id" />
           <ScalarProperty Name="pa_id" ColumnName="pa_id" />
           <ScalarProperty Name="co_id" ColumnName="co_id" />
-          <ScalarProperty Name="ex_id" ColumnName="ex_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

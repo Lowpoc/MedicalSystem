@@ -639,15 +639,15 @@
     <Content Include="assets\js\plugins\tocify\jquery.tocify.min.js" />
     <Content Include="assets\js\plugins\unveil\jquery.unveil.js" />
     <Content Include="assets\js\plugins\waypoint\waypoints.min.js" />
-    <Content Include="model\DbConnect.Context.tt">
+    <Content Include="model\DBconnect.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbConnect.edmx</DependentUpon>
-      <LastGenOutput>DbConnect.Context.cs</LastGenOutput>
+      <DependentUpon>DBconnect.edmx</DependentUpon>
+      <LastGenOutput>DBconnect.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="model\DbConnect.tt">
+    <Content Include="model\DBconnect.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbConnect.edmx</DependentUpon>
-      <LastGenOutput>DbConnect.cs</LastGenOutput>
+      <DependentUpon>DBconnect.edmx</DependentUpon>
+      <LastGenOutput>DBconnect.cs</LastGenOutput>
     </Content>
     <Content Include="packages.config" />
     <Content Include="frmConsultarMedicos.aspx" />
@@ -687,12 +687,13 @@
     <Content Include="frmConsultarConvenio.aspx" />
     <Content Include="frmCadastroExame.aspx" />
     <Content Include="frmConsultarExame.aspx" />
-    <EntityDeploy Include="model\DbConnect.edmx">
+    <Content Include="frmCadastrarConsulta.aspx" />
+    <EntityDeploy Include="model\DBconnect.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbConnect.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBconnect.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="model\DbConnect.edmx.diagram">
-      <DependentUpon>DbConnect.edmx</DependentUpon>
+    <Content Include="model\DBconnect.edmx.diagram">
+      <DependentUpon>DBconnect.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -715,6 +716,7 @@
     <Compile Include="classes\enumartions\TurnoEnum.cs" />
     <Compile Include="classes\contexto\Medicos.cs" />
     <Compile Include="classes\conexao\ConectDb.cs" />
+    <Compile Include="controller\ConsultaController.cs" />
     <Compile Include="controller\ConvenioController.cs" />
     <Compile Include="controller\DataobjectAttribute.cs" />
     <Compile Include="controller\EstadoController.cs" />
@@ -723,40 +725,40 @@
     <Compile Include="controller\PacienteController.cs" />
     <Compile Include="controller\PlanoController.cs" />
     <Compile Include="model\Consulta.cs">
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Convenio.cs">
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
-    <Compile Include="model\DbConnect.Context.cs">
+    <Compile Include="model\DBconnect.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbConnect.Context.tt</DependentUpon>
+      <DependentUpon>DBconnect.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="model\DbConnect.cs">
+    <Compile Include="model\DBconnect.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
-    <Compile Include="model\DbConnect.Designer.cs">
+    <Compile Include="model\DBconnect.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbConnect.edmx</DependentUpon>
+      <DependentUpon>DBconnect.edmx</DependentUpon>
     </Compile>
     <Compile Include="model\Estado.cs">
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Exame.cs">
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Medico.cs">
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Paciente.cs">
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Plano.cs">
-      <DependentUpon>DbConnect.tt</DependentUpon>
+      <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmCadastroMedico.aspx.cs">
@@ -828,6 +830,13 @@
     </Compile>
     <Compile Include="frmConsultarExame.aspx.designer.cs">
       <DependentUpon>frmConsultarExame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastrarConsulta.aspx.cs">
+      <DependentUpon>frmCadastrarConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCadastrarConsulta.aspx.designer.cs">
+      <DependentUpon>frmCadastrarConsulta.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

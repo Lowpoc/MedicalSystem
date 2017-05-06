@@ -21,7 +21,6 @@
     <Property Name="md_id" Type="int" Nullable="false" />
     <Property Name="pa_id" Type="int" Nullable="false" />
     <Property Name="co_id" Type="int" Nullable="false" />
-    <Property Name="ex_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="es_Estados">
     <Key>
@@ -84,18 +83,6 @@
       </Principal>
       <Dependent Role="cs_Consulta">
         <PropertyRef Name="co_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_cs_Consulta_ex_Exames">
-    <End Role="ex_Exames" Type="Self.ex_Exames" Multiplicity="1" />
-    <End Role="cs_Consulta" Type="Self.cs_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ex_Exames">
-        <PropertyRef Name="ex_id" />
-      </Principal>
-      <Dependent Role="cs_Consulta">
-        <PropertyRef Name="ex_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -169,10 +156,6 @@
     <EntitySet Name="pl_Planos" EntityType="Self.pl_Planos" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_cs_Consulta_co_Convenios" Association="Self.FK_cs_Consulta_co_Convenios">
       <End Role="co_Convenios" EntitySet="co_Convenios" />
-      <End Role="cs_Consulta" EntitySet="cs_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_cs_Consulta_ex_Exames" Association="Self.FK_cs_Consulta_ex_Exames">
-      <End Role="ex_Exames" EntitySet="ex_Exames" />
       <End Role="cs_Consulta" EntitySet="cs_Consulta" />
     </AssociationSet>
     <AssociationSet Name="FK_cs_Consulta_md_Medicos" Association="Self.FK_cs_Consulta_md_Medicos">

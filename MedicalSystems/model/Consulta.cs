@@ -23,10 +23,8 @@ namespace MedicalSystems.model
         public int md_id { get; set; }
         public int pa_id { get; set; }
         public int co_id { get; set; }
-        public int ex_id { get; set; }
     
         public virtual Convenio co_Convenios { get; set; }
-        public virtual Exame ex_Exames { get; set; }
         public virtual Medico md_Medicos { get; set; }
         public virtual Paciente pa_Pacientes { get; set; }
     }

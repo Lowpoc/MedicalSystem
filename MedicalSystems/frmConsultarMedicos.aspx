@@ -1,4 +1,6 @@
 ﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmConsultarMedicos.aspx.cs" Inherits="MedicalSystems.frmConsultarMedicos" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="dev-page-content" >                    
 <!-- page content container -->
@@ -46,6 +48,7 @@
                     <header class="panel-heading">
                         <h1>Listagem</h1>
                     </header>
+                    <asp:ScriptManager runat="server" AjaxFrameworkMode="Enabled" ></asp:ScriptManager>
                     <asp:GridView runat="server" DataSourceID="ObjectMedicos" AutoGenerateColumns="False" CssClass="table table-condensed"  DataKeyNames="md_id" EmptyDataText="<div class='col-md-12'><h4>Não Contem nenhum Medico com as caracteristicas deste filtros</h1></div>"  AllowPaging="True">
                         <Columns>
                             <asp:BoundField  DataField="md_id" HeaderText="Registro" SortExpression="md_id"></asp:BoundField>
@@ -59,9 +62,13 @@
                             <asp:BoundField DataField="md_atendimentos_turnos" HeaderText="Turnos" SortExpression="md_atendimentos_turnos"></asp:BoundField>
                             <asp:TemplateField HeaderText="Ações">
                                 <ItemTemplate>
-                                    <asp:LinkButton CommandName="Delete" runat="server" Height="38px"><i class=" glyphicon glyphicon-remove-sign" title="Remover" style="height: 38px; color: red"></i></asp:LinkButton>
+                                    
+                                    <asp:LinkButton id="DeleteCommand" CommandName="Delete" runat="server" Height="38px"><i class=" glyphicon glyphicon-remove-sign" title="Remover" style="height: 38px; color: red"></i></asp:LinkButton>
+                                      <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1" runat="server" TargetControlID="DeleteCommand"
+                                        ConfirmText="Deseja realmente excluir este item?" OnClientCancel="CancelClick"  />    
                                     <asp:LinkButton runat="server" ToolTip="Editar" PostBackUrl='<%# string.Format("~/frmCadastroMedico.aspx?id={0}",Eval("md_id"))%>'><i class="fa fa fa-book" title="Editar" style="height: 38px; color: chocolate"></i></asp:LinkButton>
                                 </ItemTemplate>
+                                
                             </asp:TemplateField>
                         </Columns>
                         <pagersettings mode="Numeric"

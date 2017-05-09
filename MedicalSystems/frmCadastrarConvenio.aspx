@@ -35,12 +35,22 @@
                                 <label class="col-md-2 control-label">Nome</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("co_nome") %>' runat="server" ID="co_nomeTextBox" CssClass="form-control" /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="co_nomeTextBox" ID="validateNome" Display="Dynamic" ErrorMessage="Necessario preencher o campo nome"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Telefone</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("co_telefone") %>' runat="server" ID="co_telefoneTextBox" CssClass="form-control" /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="co_telefoneTextBox" ID="RequiredFieldValidator1" Display="Dynamic" ErrorMessage="Necessario preencher o telefone"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True"
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <asp:LinkButton runat="server" Text="Atualizar" CommandName="Update" ID="UpdateButton" CausesValidation="True" CssClass="btn btn-info" />&nbsp;
@@ -50,13 +60,23 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Nome</label>
                                 <div class="col-md-8">
-                                    <asp:TextBox Text='<%# Bind("co_nome") %>' runat="server" CssClass="form-control" ID="co_nomeTextBox" required /><br />
+                                    <asp:TextBox Text='<%# Bind("co_nome") %>' runat="server" CssClass="form-control" ID="co_nomeTextBox" /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="co_nomeTextBox" ID="validateNome" Display="Dynamic" ErrorMessage="Necessario preencher o campo nome"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Telefone</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("co_telefone") %>' runat="server" ID="co_telefoneTextBox" CssClass="form-control" /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="co_telefoneTextBox" ID="RequiredFieldValidator1" Display="Dynamic" ErrorMessage="Necessario preencher o telefone"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True"
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <asp:LinkButton runat="server" Text="Cadastrar" CommandName="Insert" ID="InsertButton" CausesValidation="True" CssClass="btn btn-info" />&nbsp;

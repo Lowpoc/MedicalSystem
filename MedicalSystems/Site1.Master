@@ -30,6 +30,7 @@
     </style>
 </head>
 <body>
+
 <!-- set loading layer -->
 <div class="dev-page-loading preloader"></div>
 <!-- ./set loading layer -->       

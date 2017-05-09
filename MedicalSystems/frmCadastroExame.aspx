@@ -35,12 +35,22 @@
                                 <label class="col-md-2 control-label">Nome</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("ex_nome") %>' runat="server" ID="ex_nomeTextBox" CssClass="form-control" /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="ex_nomeTextBox" ID="validateNome" Display="Dynamic" ErrorMessage="Necessario preencher o campo nome"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Telefone</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("ex_codigo") %>' runat="server" ID="ex_codigoTextBox" CssClass="form-control" /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="ex_codigoTextBox" ID="RequiredFieldValidator1" Display="Dynamic" ErrorMessage="Necessario preencher o campo codigo"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -57,12 +67,22 @@
                                 <label class="col-md-2 control-label">Nome</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("ex_nome") %>' runat="server" CssClass="form-control" ID="ex_nomeTextBox" required /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="ex_nomeTextBox" ID="validateNome" Display="Dynamic" ErrorMessage="Necessario preencher o campo nome"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Codigo</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("ex_codigo") %>' runat="server" ID="ex_codigoTextBox" CssClass="form-control" /><br />
+                                    <asp:RequiredFieldValidator runat="server"
+                                                                ControlToValidate="ex_codigoTextBox" ID="RequiredFieldValidator1" Display="Dynamic" ErrorMessage="Necessario preencher o campo codigo"
+                                                                CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                    >
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="form-group">

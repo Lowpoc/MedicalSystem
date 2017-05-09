@@ -35,24 +35,45 @@
                             <label class="col-md-2 control-label">Nome</label>
                             <div class="col-md-8">
                                 <asp:TextBox Text='<%# Bind("md_nome") %>' runat="server" ID="md_nomeTextBox" CssClass="form-control" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_nomeTextBox" ID="validateNome" Display="Dynamic" ErrorMessage="Necessario preencher o campo nome"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">CPF</label>
                             <div class="col-md-8">
                                 <asp:TextBox Text='<%# Bind("md_cpf") %>' runat="server" ID="md_cpfTextBox" CssClass="form-control" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_cpfTextBox" ID="RequiredFieldValidator1" Display="Dynamic" ErrorMessage="Necessario preencher o cpf"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
+
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">CRM</label>
                             <div class="col-md-8">
                                 <asp:TextBox Text='<%# Bind("md_crm") %>' runat="server" ID="md_crmTextBox" CssClass="form-control" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_crmTextBox" ID="RequiredFieldValidator2" Display="Dynamic" ErrorMessage="Necessario preencher o crm"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Cidade</label>
                             <div class="col-md-8">
                                 <asp:TextBox Text='<%# Bind("md_endereco") %>' runat="server" ID="md_enderecoTextBox" CssClass="form-control" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_enderecoTextBox" ID="RequiredFieldValidator3" Display="Dynamic" ErrorMessage="Necessario preencher o endereço"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
@@ -60,6 +81,11 @@
                             <div class="col-md-8">
                                 <asp:DropDownList ID="EstadosLista" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="ObjectEstado" DataTextField="es_nome" DataValueField="es_id" SelectedValue='<%# Bind("es_id") %>'>
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="EstadosLista" ID="RequiredFieldValidator4" Display="Dynamic" ErrorMessage="Selecione um estado"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" InitialValue="-1" 
+                                >
+                                </asp:RequiredFieldValidator>
                                 <asp:ObjectDataSource runat="server" ID="ObjectEstado" SelectMethod="Consultar" TypeName="MedicalSystems.controller.EstadoController"></asp:ObjectDataSource>
                             </div>
                         </div>
@@ -67,13 +93,24 @@
                             <label class="col-md-2 control-label">Cidade</label>
                             <div class="col-md-8">
                                 <asp:TextBox Text='<%# Bind("cidade_descricao") %>' runat="server" ID="cidade_descricaoTextBox" CssClass="form-control" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="cidade_descricaoTextBox" ID="RequiredFieldValidator5" Display="Dynamic" ErrorMessage="Necessario preencher a cidade"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Turnos</label>
                             <div class="col-md-8">
-                                <asp:DropDownList ID="Turnos" runat="server" CssClass="form-control"></asp:DropDownList>
-                               <%-- <asp:TextBox Text='<%# Bind("md_atendimentos_turnos") %>' runat="server" ID="md_atendimentos_turnosTextBox" CssClass="form-control" /><br />--%>
+                                <asp:DropDownList AppendDataBoundItems="True" ID="Turnos" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Selecione uma opção" Value="-1" ></asp:ListItem>
+                                </asp:DropDownList></br>
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="Turnos" ID="RequiredFieldValidator6" Display="Dynamic" ErrorMessage="Selecione um turno"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" InitialValue="-1" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <asp:LinkButton runat="server" Text="Atualizar" CommandName="Update" ID="UpdateButton" CausesValidation="True" CssClass="btn btn-info" />&nbsp;
@@ -83,45 +120,82 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Nome</label>
                             <div class="col-md-8">
-                                <asp:TextBox Text='<%# Bind("md_nome") %>' runat="server" CssClass="form-control" ID="md_nomeTextBox" required /><br />
+                                <asp:TextBox Text='<%# Bind("md_nome") %>' runat="server" CssClass="form-control" ID="md_nomeTextBox" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_nomeTextBox" ID="validateNome" Display="Dynamic" ErrorMessage="Necessario preencher o campo nome"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">CPF</label>
                             <div class="col-md-8">
-                                <asp:TextBox Text='<%# Bind("md_cpf") %>' runat="server" ID="md_cpfTextBox" CssClass="form-control" required /><br />
+                                <asp:TextBox Text='<%# Bind("md_cpf") %>' runat="server" ID="md_cpfTextBox" CssClass="form-control"  /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_cpfTextBox" ID="RequiredFieldValidator1" Display="Dynamic" ErrorMessage="Necessario preencher o cpf"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">CRM</label>
                             <div class="col-md-8">
-                                <asp:TextBox Text='<%# Bind("md_crm") %>' runat="server" ID="md_crmTextBox" CssClass="form-control" required /><br />
+                                <asp:TextBox Text='<%# Bind("md_crm") %>' runat="server" ID="md_crmTextBox" CssClass="form-control"  /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_crmTextBox" ID="RequiredFieldValidator2" Display="Dynamic" ErrorMessage="Necessario preencher o crm"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Endereço</label>
                             <div class="col-md-8">
-                                <asp:TextBox Text='<%# Bind("md_endereco") %>' runat="server" ID="md_enderecoTextBox" CssClass="form-control" required /><br />
+                                <asp:TextBox Text='<%# Bind("md_endereco") %>' runat="server" ID="md_enderecoTextBox" CssClass="form-control" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="md_enderecoTextBox" ID="RequiredFieldValidator3" Display="Dynamic" ErrorMessage="Necessario preencher o endereço"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Cidade</label>
                             <div class="col-md-8">
                                 <asp:TextBox Text='<%# Bind("cidade_descricao") %>' runat="server" ID="cidade_descricaoTextBox" CssClass="form-control" /><br />
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="cidade_descricaoTextBox" ID="RequiredFieldValidator5" Display="Dynamic" ErrorMessage="Necessario preencher a cidade"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Turnos</label>
                             <div class="col-md-8">
-                                <asp:DropDownList ID="Turnos" runat="server" CssClass="form-control"></asp:DropDownList>
-                                <%--<asp:TextBox Text='<%# Bind("md_atendimentos_turnos") %>' runat="server" ID="md_atendimentos_turnosTextBox" TextMode="number"  CssClass="form-control"/><br />--%>
+                                <asp:DropDownList ID="Turnos" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                                    <asp:ListItem Text="Selecione uma opção" Value="-1" Selected="True"></asp:ListItem>
+                                </asp:DropDownList></br>
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="Turnos" ID="RequiredFieldValidator6" Display="Dynamic" ErrorMessage="Selecione um turno"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" InitialValue="-1" 
+                                >
+                                </asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Estados</label>
                             <div class="col-md-8">
-                                <asp:DropDownList ID="EstadosLista" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="ObjectEstado" DataTextField="es_nome" DataValueField="es_id" SelectedValue='<%# Bind("es_id") %>'>
+                                <asp:DropDownList  ID="EstadosLista" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="ObjectEstado" DataTextField="es_nome" DataValueField="es_id" SelectedValue='<%# Bind("es_id") %>' >
+                                    <asp:ListItem Text="Selecione uma opção" Value="-1"></asp:ListItem>
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="EstadosLista" ID="RequiredFieldValidator4" Display="Dynamic" ErrorMessage="Selecione um estado"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" InitialValue="-1" 
+                                >
+                                </asp:RequiredFieldValidator>
                                 <asp:ObjectDataSource runat="server" ID="ObjectEstado" SelectMethod="Consultar" TypeName="MedicalSystems.controller.EstadoController"></asp:ObjectDataSource>
                             </div>
                         </div>

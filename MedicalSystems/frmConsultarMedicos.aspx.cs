@@ -16,5 +16,6 @@ namespace MedicalSystems
             var contexto = new MedicalSystemEntities1();
            
         }
+
     }
 }

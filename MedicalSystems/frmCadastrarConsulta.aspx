@@ -128,12 +128,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label">Codigo</label>
-                                <div class="col-md-8">
-                                    <asp:TextBox Text='<%# Bind("cs_nome") %>' runat="server" ID="ex_codigoTextBox" CssClass="form-control" /><br />
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="col-md-2 control-label">Medicamentos</label>
                                 <div class="col-md-8">
                                     <asp:TextBox Text='<%# Bind("cs_observacao") %>' runat="server" ID="ex_observacaoTextBox" CssClass="form-control"  TextMode="MultiLine"/><br />

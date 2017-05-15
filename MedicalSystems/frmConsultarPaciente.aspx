@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmConsultarPaciente.aspx.cs" Inherits="MedicalSystems.frmConsultarPaciente" %>
+<%@ Register TagPrefix="ajaxToolkit" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=17.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="dev-page-content" >                    
         <!-- page content container -->
@@ -46,6 +47,7 @@
                                     <header class="panel-heading">
                                         <h1>Listagem</h1>
                                     </header>
+                                    <asp:ScriptManager runat="server" AjaxFrameworkMode="Enabled" ></asp:ScriptManager>
                                     <asp:GridView runat="server" DataSourceID="ObjectPaciente" DataKeyNames="pa_id" AutoGenerateColumns="False" CssClass="table table-condensed" EmptyDataText="<div class='col-md-12'><h4>Não Contem nenhum Paciente com as caracteristicas deste filtros</h1></div>" AllowPaging="True">
                                         <Columns>
                                             <asp:BoundField DataField="pa_nome" HeaderText="Nome" SortExpression="pa_nome"></asp:BoundField>
@@ -58,7 +60,9 @@
                                             <asp:BoundField DataField="pl_Planos.pl_nome" HeaderText="Plano" SortExpression="pl_id"></asp:BoundField>
                                             <asp:TemplateField HeaderText="Ações">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton CommandName="Delete" runat="server" Height="38px"><i class=" glyphicon glyphicon-remove-sign" title="Remover" style="height: 38px; color: red"></i></asp:LinkButton>
+                                                    <asp:LinkButton CommandName="Delete" ID="DeleteCommand" runat="server" Height="38px"><i class=" glyphicon glyphicon-remove-sign" title="Remover" style="height: 38px; color: red"></i></asp:LinkButton>
+                                                    <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1" runat="server" TargetControlID="DeleteCommand"
+                                                                                       ConfirmText="Deseja realmente excluir este item?"  />    
                                                     <asp:LinkButton runat="server" ToolTip="Editar" PostBackUrl='<%# string.Format("~/frmCadastroPaciente.aspx?id={0}",Eval("pa_id"))%>'><i class="fa fa fa-book" title="Editar" style="height: 38px; color: chocolate"></i></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>

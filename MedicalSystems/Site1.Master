@@ -86,7 +86,7 @@
             <a href="index.aspx"><i class="fa fa-desktop"></i> <span>Dashboard</span></a>
         </li>                        
         <li>
-            <a href="#"><i class="fa fa-file-o"></i> <span>Cadastros</span></a>
+            <a href="#"><i class="fa fa-file-o"></i> <span>Administrativo</span></a>
             <ul>
                 <li>
                     <a href="#">Formulários</a>
@@ -107,23 +107,6 @@
                         <li><a href="frmConsultarExame.aspx">Exames</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Registration Forms</a>
-                    <ul>
-                        <li><a href="pages-registration.html" target="_blank">Registration</a></li>
-                        <li><a href="pages-registration-lite.html" target="_blank">Registration Lite</a></li>
-                    </ul>
-                </li>                                
-                <li><a href="pages-lock-screen.html">Lock Screen</a></li>                                
-                <li><a href="pages-session-timeout.html">Session Timeout</a></li>
-                <li><a href="pages-edit-profile.html">Edit Profile</a></li>
-                <li><a href="pages-profile.html">Profile</a></li>
-                <li><a href="pages-faq.html">FAQ</a></li>
-                <li><a href="pages-gallery.html">Gallery</a></li>
-                <li><a href="pages-tocify.html">Tocify</a></li>
-                <li><a href="pages-invoice.html">Invoice</a></li>
-                <li><a href="pages-error-404.html">Error 404</a></li>                                
-                <li><a href="pages-contacts.html">Contacts</a></li>
             </ul>
         </li>                        
         <%--<li>

@@ -190,7 +190,7 @@
                         <div class="form-group">
                         <label class="col-md-2 control-label">Aniversário</label>
                             <div class="col-md-8">
-                                <asp:TextBox Text='<%# Bind("pa_data_aniversario", "{0:G}") %>' runat="server" ID="pa_data_aniversarioTextBox" CssClass="form-control" TextMode="DateTime" /><br />
+                                <asp:TextBox Text='<%# Bind("pa_data_aniversario", "{0:G}") %>' runat="server" ID="pa_data_aniversarioTextBox" CssClass="form-control" TextMode="Date" /><br />
                             <asp:RequiredFieldValidator runat="server"
                                                         ControlToValidate="pa_data_aniversarioTextBox" ID="RequiredFieldValidator4" Display="Dynamic" ErrorMessage="Necessario preencher o campo"
                                                         CssClass="text-danger" SetFocusOnError="True"

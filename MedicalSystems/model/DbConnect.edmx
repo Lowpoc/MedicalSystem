@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="cs_id" />
           </Key>
-          <Property Name="cs_id" Type="int" Nullable="false" />
+          <Property Name="cs_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cs_nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cs_observacao" Type="varchar" MaxLength="150" />
           <Property Name="cs_turno" Type="tinyint" Nullable="false" />
@@ -61,7 +61,7 @@
           <Key>
             <PropertyRef Name="pa_id" />
           </Key>
-          <Property Name="pa_id" Type="int" Nullable="false" />
+          <Property Name="pa_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="pa_nome" Type="varchar" MaxLength="70" Nullable="false" />
           <Property Name="pa_cpf" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="es_id" Type="int" Nullable="false" />
@@ -202,7 +202,7 @@
           <Key>
             <PropertyRef Name="cs_id" />
           </Key>
-          <Property Name="cs_id" Type="Int32" Nullable="false" />
+          <Property Name="cs_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cs_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cs_observacao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="cs_turno" Type="Byte" Nullable="false" />
@@ -253,7 +253,7 @@
           <Key>
             <PropertyRef Name="pa_id" />
           </Key>
-          <Property Name="pa_id" Type="Int32" Nullable="false" />
+          <Property Name="pa_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="pa_nome" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pa_cpf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="es_id" Type="Int32" Nullable="false" />
@@ -347,7 +347,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MedicalSystemEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MedicalSystemEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="co_Convenios" EntityType="MedicalSystemModel.Convenio" />
           <EntitySet Name="cs_Consulta" EntityType="MedicalSystemModel.Consulta" />
           <EntitySet Name="es_Estados" EntityType="MedicalSystemModel.Estado" />
@@ -385,7 +385,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities1">
+        <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities3">
           <EntitySetMapping Name="co_Convenios">
             <EntityTypeMapping TypeName="MedicalSystemModel.Convenio">
               <MappingFragment StoreEntitySet="co_Convenios">

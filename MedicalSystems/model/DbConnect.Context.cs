@@ -13,10 +13,10 @@ namespace MedicalSystems.model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MedicalSystemEntities1 : DbContext
+    public partial class MedicalSystemEntities3 : DbContext
     {
-        public MedicalSystemEntities1()
-            : base("name=MedicalSystemEntities1")
+        public MedicalSystemEntities3()
+            : base("name=MedicalSystemEntities3")
         {
         }
     

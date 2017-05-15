@@ -65,7 +65,7 @@
                                     
                                     <asp:LinkButton id="DeleteCommand" CommandName="Delete" runat="server" Height="38px"><i class=" glyphicon glyphicon-remove-sign" title="Remover" style="height: 38px; color: red"></i></asp:LinkButton>
                                       <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1" runat="server" TargetControlID="DeleteCommand"
-                                        ConfirmText="Deseja realmente excluir este item?" OnClientCancel="CancelClick"  />    
+                                        ConfirmText="Deseja realmente excluir este item?"  />    
                                     <asp:LinkButton runat="server" ToolTip="Editar" PostBackUrl='<%# string.Format("~/frmCadastroMedico.aspx?id={0}",Eval("md_id"))%>'><i class="fa fa fa-book" title="Editar" style="height: 38px; color: chocolate"></i></asp:LinkButton>
                                 </ItemTemplate>
                                 

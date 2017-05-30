@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities3">
+  <EntityContainerMapping StorageEntityContainer="MedicalSystemModelStoreContainer" CdmEntityContainer="MedicalSystemEntities6">
     <EntitySetMapping Name="co_Convenios">
       <EntityTypeMapping TypeName="MedicalSystemModel.Convenio">
         <MappingFragment StoreEntitySet="co_Convenios">
@@ -34,6 +34,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="esp_Especialidade">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Especialidade">
+        <MappingFragment StoreEntitySet="esp_Especialidade">
+          <ScalarProperty Name="esp_id" ColumnName="esp_id" />
+          <ScalarProperty Name="esp_nome" ColumnName="esp_nome" />
+          <ScalarProperty Name="esp_descricao" ColumnName="esp_descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ex_Exames">
       <EntityTypeMapping TypeName="MedicalSystemModel.Exame">
         <MappingFragment StoreEntitySet="ex_Exames">
@@ -55,6 +64,7 @@
           <ScalarProperty Name="es_id" ColumnName="es_id" />
           <ScalarProperty Name="cidade_descricao" ColumnName="cidade_descricao" />
           <ScalarProperty Name="md_atendimentos_turnos" ColumnName="md_atendimentos_turnos" />
+          <ScalarProperty Name="esp_id" ColumnName="esp_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -79,6 +89,19 @@
           <ScalarProperty Name="pl_id" ColumnName="pl_id" />
           <ScalarProperty Name="pl_nome" ColumnName="pl_nome" />
           <ScalarProperty Name="pl_desconto" ColumnName="pl_desconto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="req_Requisao">
+      <EntityTypeMapping TypeName="MedicalSystemModel.Requisicao">
+        <MappingFragment StoreEntitySet="req_Requisao">
+          <ScalarProperty Name="req_id" ColumnName="req_id" />
+          <ScalarProperty Name="pa_id" ColumnName="pa_id" />
+          <ScalarProperty Name="ex_id" ColumnName="ex_id" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="req_obersavacao" ColumnName="req_obersavacao" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="co_id" ColumnName="co_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

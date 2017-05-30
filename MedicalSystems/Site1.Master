@@ -96,6 +96,7 @@
                         <li><a href="frmCadastrarConvenio.aspx">Convênios</a></li>
                         <li><a href="frmCadastroExame.aspx">Exames</a></li>
                         <li><a href="frmCadastrarConsulta.aspx">Consulta</a></li>
+                        <li><a href="frm_CadastrarEspecialidade.aspx">Especialidade</a></li>
                     </ul>
                 </li>
                 <li>
@@ -105,6 +106,7 @@
                         <li><a href="frmConsultarPaciente.aspx">Pacientes</a></li>
                         <li><a href="frmConsultarConvenio.aspx">Convênios</a></li>
                         <li><a href="frmConsultarExame.aspx">Exames</a></li>
+                        <li><a href="frmConsultarEspecialidade.aspx">Especialidade</a></li>
                     </ul>
                 </li>
             </ul>

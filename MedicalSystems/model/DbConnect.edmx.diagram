@@ -4,20 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2deda3a7fc724a0c881bfa91e257e49f" Name="Diagram1">
-        <EntityTypeShape EntityType="MedicalSystemModel.Convenio" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Consulta" Width="1.5" PointX="8.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Estado" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Exame" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Medico" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Paciente" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalSystemModel.Plano" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="698c1b5bf17b4c3f8975729410d19d5a" Name="Diagram1">
+        <EntityTypeShape EntityType="MedicalSystemModel.Convenio" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Consulta" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Estado" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Especialidade" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Exame" Width="1.5" PointX="9" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Medico" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Paciente" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Plano" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalSystemModel.Requisicao" Width="1.5" PointX="11.25" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="MedicalSystemModel.FK_cs_Consulta_co_Convenios" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.FK_req_Requisao_co_Convenios" ManuallyRouted="false" />
         <AssociationConnector Association="MedicalSystemModel.FK_cs_Consulta_md_Medicos" ManuallyRouted="false" />
         <AssociationConnector Association="MedicalSystemModel.FK_cs_Consulta_pa_Pacientes" ManuallyRouted="false" />
         <AssociationConnector Association="MedicalSystemModel.fk_id" ManuallyRouted="false" />
         <AssociationConnector Association="MedicalSystemModel.FK_md_Medicos_es_Estados" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.FK_esp_id" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.FK_req_Requisao_ex_Exames" ManuallyRouted="false" />
         <AssociationConnector Association="MedicalSystemModel.FK_pa_Pacientes_pl_Planos" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalSystemModel.FK_req_Requisao_pa_Pacientes" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

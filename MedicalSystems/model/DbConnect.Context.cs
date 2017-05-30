@@ -13,10 +13,10 @@ namespace MedicalSystems.model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MedicalSystemEntities3 : DbContext
+    public partial class MedicalSystemEntities6 : DbContext
     {
-        public MedicalSystemEntities3()
-            : base("name=MedicalSystemEntities3")
+        public MedicalSystemEntities6()
+            : base("name=MedicalSystemEntities6")
         {
         }
     
@@ -28,9 +28,11 @@ namespace MedicalSystems.model
         public virtual DbSet<Convenio> co_Convenios { get; set; }
         public virtual DbSet<Consulta> cs_Consulta { get; set; }
         public virtual DbSet<Estado> es_Estados { get; set; }
+        public virtual DbSet<Especialidade> esp_Especialidade { get; set; }
         public virtual DbSet<Exame> ex_Exames { get; set; }
         public virtual DbSet<Medico> md_Medicos { get; set; }
         public virtual DbSet<Paciente> pa_Pacientes { get; set; }
         public virtual DbSet<Plano> pl_Planos { get; set; }
+        public virtual DbSet<Requisicao> req_Requisao { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace MedicalSystems.model
         public Convenio()
         {
             this.cs_Consulta = new HashSet<Consulta>();
+            this.req_Requisao = new HashSet<Requisicao>();
         }
     
         public int co_id { get; set; }
@@ -26,5 +27,7 @@ namespace MedicalSystems.model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consulta> cs_Consulta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Requisicao> req_Requisao { get; set; }
     }
 }

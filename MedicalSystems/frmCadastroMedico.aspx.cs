@@ -102,6 +102,7 @@ namespace MedicalSystems
         protected void ObjectMedico_OnInserting(object sender, ObjectDataSourceMethodEventArgs e)
         {
             ((Medico) e.InputParameters[0]).md_atendimentos_turnos = (int) Enum.Parse(typeof(TurnoEnum),((DropDownList)formularioMedico.FindControl("Turnos")).SelectedValue);
+            ((Medico)e.InputParameters[0]).esp_id = ((DropDownList)formularioMedico.FindControl("Especialidade")).SelectedIndex;
         }
     }
 }

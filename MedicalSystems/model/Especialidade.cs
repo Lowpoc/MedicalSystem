@@ -12,20 +12,19 @@ namespace MedicalSystems.model
     using System;
     using System.Collections.Generic;
     
-    public partial class Exame
+    public partial class Especialidade
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Exame()
+        public Especialidade()
         {
-            this.req_Requisao = new HashSet<Requisicao>();
+            this.md_Medicos = new HashSet<Medico>();
         }
     
-        public int ex_id { get; set; }
-        public string ex_nome { get; set; }
-        public string ex_observacoes { get; set; }
-        public string ex_codigo { get; set; }
+        public int esp_id { get; set; }
+        public string esp_nome { get; set; }
+        public string esp_descricao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Requisicao> req_Requisao { get; set; }
+        public virtual ICollection<Medico> md_Medicos { get; set; }
     }
 }

@@ -30,6 +30,14 @@
     <Property Name="es_sigla" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="es_nome" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="esp_Especialidade">
+    <Key>
+      <PropertyRef Name="esp_id" />
+    </Key>
+    <Property Name="esp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="esp_nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="esp_descricao" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="ex_Exames">
     <Key>
       <PropertyRef Name="ex_id" />
@@ -51,6 +59,7 @@
     <Property Name="es_id" Type="int" Nullable="false" />
     <Property Name="cidade_descricao" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="md_atendimentos_turnos" Type="int" Nullable="false" />
+    <Property Name="esp_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="pa_Pacientes">
     <Key>
@@ -73,6 +82,18 @@
     <Property Name="pl_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="pl_nome" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="pl_desconto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="req_Requisao">
+    <Key>
+      <PropertyRef Name="req_id" />
+    </Key>
+    <Property Name="req_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pa_id" Type="int" Nullable="false" />
+    <Property Name="ex_id" Type="int" Nullable="false" />
+    <Property Name="data" Type="date" />
+    <Property Name="req_obersavacao" Type="varchar" MaxLength="50" />
+    <Property Name="valor" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="co_id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_cs_Consulta_co_Convenios">
     <End Role="co_Convenios" Type="Self.co_Convenios" Multiplicity="1" />
@@ -107,6 +128,18 @@
       </Principal>
       <Dependent Role="cs_Consulta">
         <PropertyRef Name="pa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_esp_id">
+    <End Role="esp_Especialidade" Type="Self.esp_Especialidade" Multiplicity="1" />
+    <End Role="md_Medicos" Type="Self.md_Medicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="esp_Especialidade">
+        <PropertyRef Name="esp_id" />
+      </Principal>
+      <Dependent Role="md_Medicos">
+        <PropertyRef Name="esp_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -146,14 +179,52 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_req_Requisao_co_Convenios">
+    <End Role="co_Convenios" Type="Self.co_Convenios" Multiplicity="1" />
+    <End Role="req_Requisao" Type="Self.req_Requisao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="co_Convenios">
+        <PropertyRef Name="co_id" />
+      </Principal>
+      <Dependent Role="req_Requisao">
+        <PropertyRef Name="co_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_req_Requisao_ex_Exames">
+    <End Role="ex_Exames" Type="Self.ex_Exames" Multiplicity="1" />
+    <End Role="req_Requisao" Type="Self.req_Requisao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ex_Exames">
+        <PropertyRef Name="ex_id" />
+      </Principal>
+      <Dependent Role="req_Requisao">
+        <PropertyRef Name="ex_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_req_Requisao_pa_Pacientes">
+    <End Role="pa_Pacientes" Type="Self.pa_Pacientes" Multiplicity="1" />
+    <End Role="req_Requisao" Type="Self.req_Requisao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pa_Pacientes">
+        <PropertyRef Name="pa_id" />
+      </Principal>
+      <Dependent Role="req_Requisao">
+        <PropertyRef Name="pa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="MedicalSystemModelStoreContainer">
     <EntitySet Name="co_Convenios" EntityType="Self.co_Convenios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="cs_Consulta" EntityType="Self.cs_Consulta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="es_Estados" EntityType="Self.es_Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="esp_Especialidade" EntityType="Self.esp_Especialidade" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ex_Exames" EntityType="Self.ex_Exames" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="md_Medicos" EntityType="Self.md_Medicos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pa_Pacientes" EntityType="Self.pa_Pacientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pl_Planos" EntityType="Self.pl_Planos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="req_Requisao" EntityType="Self.req_Requisao" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_cs_Consulta_co_Convenios" Association="Self.FK_cs_Consulta_co_Convenios">
       <End Role="co_Convenios" EntitySet="co_Convenios" />
       <End Role="cs_Consulta" EntitySet="cs_Consulta" />
@@ -166,6 +237,10 @@
       <End Role="pa_Pacientes" EntitySet="pa_Pacientes" />
       <End Role="cs_Consulta" EntitySet="cs_Consulta" />
     </AssociationSet>
+    <AssociationSet Name="FK_esp_id" Association="Self.FK_esp_id">
+      <End Role="esp_Especialidade" EntitySet="esp_Especialidade" />
+      <End Role="md_Medicos" EntitySet="md_Medicos" />
+    </AssociationSet>
     <AssociationSet Name="fk_id" Association="Self.fk_id">
       <End Role="es_Estados" EntitySet="es_Estados" />
       <End Role="pa_Pacientes" EntitySet="pa_Pacientes" />
@@ -177,6 +252,18 @@
     <AssociationSet Name="FK_pa_Pacientes_pl_Planos" Association="Self.FK_pa_Pacientes_pl_Planos">
       <End Role="pl_Planos" EntitySet="pl_Planos" />
       <End Role="pa_Pacientes" EntitySet="pa_Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_req_Requisao_co_Convenios" Association="Self.FK_req_Requisao_co_Convenios">
+      <End Role="co_Convenios" EntitySet="co_Convenios" />
+      <End Role="req_Requisao" EntitySet="req_Requisao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_req_Requisao_ex_Exames" Association="Self.FK_req_Requisao_ex_Exames">
+      <End Role="ex_Exames" EntitySet="ex_Exames" />
+      <End Role="req_Requisao" EntitySet="req_Requisao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_req_Requisao_pa_Pacientes" Association="Self.FK_req_Requisao_pa_Pacientes">
+      <End Role="pa_Pacientes" EntitySet="pa_Pacientes" />
+      <End Role="req_Requisao" EntitySet="req_Requisao" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

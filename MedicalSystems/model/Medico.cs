@@ -28,9 +28,11 @@ namespace MedicalSystems.model
         public int es_id { get; set; }
         public string cidade_descricao { get; set; }
         public int md_atendimentos_turnos { get; set; }
+        public int esp_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consulta> cs_Consulta { get; set; }
         public virtual Estado es_Estados { get; set; }
+        public virtual Especialidade esp_Especialidade { get; set; }
     }
 }

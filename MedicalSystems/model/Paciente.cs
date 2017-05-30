@@ -18,6 +18,7 @@ namespace MedicalSystems.model
         public Paciente()
         {
             this.cs_Consulta = new HashSet<Consulta>();
+            this.req_Requisao = new HashSet<Requisicao>();
         }
     
         public int pa_id { get; set; }
@@ -34,5 +35,7 @@ namespace MedicalSystems.model
         public virtual ICollection<Consulta> cs_Consulta { get; set; }
         public virtual Estado es_Estados { get; set; }
         public virtual Plano pl_Planos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Requisicao> req_Requisao { get; set; }
     }
 }

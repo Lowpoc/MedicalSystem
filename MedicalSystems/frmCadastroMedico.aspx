@@ -199,6 +199,28 @@
                                 <asp:ObjectDataSource runat="server" ID="ObjectEstado" SelectMethod="Consultar" TypeName="MedicalSystems.controller.EstadoController"></asp:ObjectDataSource>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Especialidade</label>
+                            <div class="col-md-8">
+                                <asp:DropDownList ID="Especialidade" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="ObjectEspecialidade" DataTextField="esp_nome" DataValueField="esp_id" SelectedValue='<%# Bind("es_id") %>'>
+                                    <asp:ListItem Text="Selecione uma opção" Value="-1"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:ObjectDataSource runat="server" ID="ObjectEspecialidade"  SelectMethod="ConsultarTodos" TypeName="MedicalSystems.controller.EspecialidadeController">
+                                    <SelectParameters>
+                                        <asp:Parameter Name="esp_nome" Type="String"></asp:Parameter>
+                                        <asp:Parameter Name="esp_descricao" Type="String"></asp:Parameter>
+                                    </SelectParameters>
+                                </asp:ObjectDataSource>
+                                <asp:RequiredFieldValidator runat="server"
+                                                            ControlToValidate="EstadosLista" ID="RequiredFieldValidator7" Display="Dynamic" ErrorMessage="Selecione uma especialidade"
+                                                            CssClass="alert alert-danger col-sm-5" SetFocusOnError="True" InitialValue="-1" 
+                                >
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+
+
                         <asp:LinkButton runat="server" Text="Cadastrar" CommandName="Insert" ID="InsertButton" CausesValidation="True" CssClass="btn btn-info" />&nbsp;
                         <asp:LinkButton runat="server" Text="Cancelar" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" CssClass="btn  btn-danger" />
                     </InsertItemTemplate>

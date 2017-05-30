@@ -692,6 +692,9 @@
     <Content Include="frmCadastroExame.aspx" />
     <Content Include="frmConsultarExame.aspx" />
     <Content Include="frmCadastrarConsulta.aspx" />
+    <Content Include="frm_CadastrarEspecialidade.aspx" />
+    <Content Include="frmConsultarEspecialidade.aspx" />
+    <Content Include="frmRequisaoExame.aspx" />
     <EntityDeploy Include="model\DBconnect.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBconnect.Designer.cs</LastGenOutput>
@@ -723,11 +726,13 @@
     <Compile Include="controller\ConsultaController.cs" />
     <Compile Include="controller\ConvenioController.cs" />
     <Compile Include="controller\DataobjectAttribute.cs" />
+    <Compile Include="controller\EspecialidadeController.cs" />
     <Compile Include="controller\EstadoController.cs" />
     <Compile Include="controller\ExameController.cs" />
     <Compile Include="controller\MedicoController.cs" />
     <Compile Include="controller\PacienteController.cs" />
     <Compile Include="controller\PlanoController.cs" />
+    <Compile Include="controller\RequisicaoController.cs" />
     <Compile Include="model\Consulta.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -749,6 +754,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBconnect.edmx</DependentUpon>
     </Compile>
+    <Compile Include="model\Especialidade.cs">
+      <DependentUpon>DBconnect.tt</DependentUpon>
+    </Compile>
     <Compile Include="model\Estado.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -762,6 +770,9 @@
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="model\Plano.cs">
+      <DependentUpon>DBconnect.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\Requisicao.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -841,6 +852,27 @@
     </Compile>
     <Compile Include="frmCadastrarConsulta.aspx.designer.cs">
       <DependentUpon>frmCadastrarConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CadastrarEspecialidade.aspx.cs">
+      <DependentUpon>frm_CadastrarEspecialidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frm_CadastrarEspecialidade.aspx.designer.cs">
+      <DependentUpon>frm_CadastrarEspecialidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarEspecialidade.aspx.cs">
+      <DependentUpon>frmConsultarEspecialidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmConsultarEspecialidade.aspx.designer.cs">
+      <DependentUpon>frmConsultarEspecialidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRequisaoExame.aspx.cs">
+      <DependentUpon>frmRequisaoExame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmRequisaoExame.aspx.designer.cs">
+      <DependentUpon>frmRequisaoExame.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
